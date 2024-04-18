@@ -1,13 +1,16 @@
-class  extends StatefulWidget {
-  const ({super.key});
+import 'package:flutter/material.dart';
+
+class NavTabWidget extends StatefulWidget {
+  const NavTabWidget({super.key});
 
   @override
-  State<> createState() => _State();
+  State<NavTabWidget> createState() => _NavTabWidgetState();
 }
 
-class _State extends State<> {
+class _NavTabWidgetState extends State<NavTabWidget> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
   }
 }
+

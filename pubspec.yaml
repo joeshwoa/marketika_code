@@ -10,20 +10,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.8
   flutterflow_ui_pro:
-    path: D:\UserFiles\FlutterPackages\flutterflow-ui-pro
+    path: D:\User Files\Projects\FlutterPackages\flutterflow_ui_pro
   aligned_tooltip: ^0.0.1
   aligned_dialog: ^0.0.7
   badges: ^3.1.2
-  adaptive_theme: ^3.5.0
+  adaptive_theme: ^3.6.0
   carousel_slider: ^4.2.1
   icons_launcher: ^2.1.7
+  youtube_player_flutter: ^9.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.2
 
 flutter:
   uses-material-design: true
