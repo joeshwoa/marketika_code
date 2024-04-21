@@ -268,8 +268,8 @@ class _TopNavWidgetState extends State<TopNavWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(-40, 0),
-          end: Offset(0, 0),
+          begin: const Offset(-40, 0),
+          end: const Offset(0, 0),
         ),
       ],
     ),
@@ -460,16 +460,16 @@ class _TopNavWidgetState extends State<TopNavWidget>
           Container(
             width: 200,
             height: 44,
-            decoration: BoxDecoration(),
+            decoration: const BoxDecoration(),
           ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
+          padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 12),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -480,12 +480,12 @@ class _TopNavWidgetState extends State<TopNavWidget>
                       Container(
                         width: 24,
                         height: 44,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                       ),
                     wrapWithModel(
                       model: _model.mainLogoModel,
                       updateCallback: () => setState(() {}),
-                      child: MainLogoWidget(),
+                      child: const MainLogoWidget(),
                     ),
                   ],
                 ),
@@ -498,7 +498,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
               ))
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(6),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -512,17 +512,17 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: const AlignmentDirectional(0, 0),
                             child: Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),));
                                 },
                                 child: Text(
                                   'الرئيسية',
@@ -552,17 +552,17 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: const AlignmentDirectional(0, 0),
                             child: Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                 },
                                 child: Text(
                                   'Tips & Tricks',
@@ -592,17 +592,17 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: const AlignmentDirectional(0, 0),
                             child: Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                 },
                                 child: Text(
                                   'يلا نرغي',
@@ -632,17 +632,17 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: const AlignmentDirectional(0, 0),
                             child: Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                 },
                                 child: Text(
                                   'ادوات',
@@ -672,17 +672,17 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: const AlignmentDirectional(0, 0),
                             child: Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                 },
                                 child: Text(
                                   'تجارب شخصية',
@@ -712,17 +712,17 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: const AlignmentDirectional(0, 0),
                             child: Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                 },
                                 child: Text(
                                   'Case Studies',
@@ -752,17 +752,17 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: const AlignmentDirectional(0, 0),
                             child: Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                 },
                                 child: Text(
                                   'منصات التواصل الاجتماعي',
@@ -792,17 +792,17 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           child: Align(
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: const AlignmentDirectional(0, 0),
                             child: Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                 },
                                 child: Text(
                                   'عن ماركتيكا',
@@ -834,7 +834,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
               ))
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(6),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -842,7 +842,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                             child: Container(
                               height: 40,
                               decoration: BoxDecoration(
@@ -852,9 +852,9 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                 ),
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       6, 0, 6, 0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -862,7 +862,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),));
                                     },
                                     child: Text(
                                       'الرئيسية',
@@ -886,7 +886,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                             child: Container(
                               height: 40,
                               decoration: BoxDecoration(
@@ -896,9 +896,9 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                 ),
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       6, 0, 6, 0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -906,7 +906,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                     },
                                     child: Text(
                                       'Tips & Tricks',
@@ -930,7 +930,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                             child: Container(
                               height: 40,
                               decoration: BoxDecoration(
@@ -940,9 +940,9 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                 ),
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       6, 0, 6, 0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -950,7 +950,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                     },
                                     child: Text(
                                       'يلا نرغي',
@@ -974,7 +974,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                             child: Container(
                               height: 40,
                               decoration: BoxDecoration(
@@ -984,9 +984,9 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                 ),
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       6, 0, 6, 0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -994,7 +994,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                     },
                                     child: Text(
                                       'ادوات',
@@ -1018,7 +1018,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                             child: Container(
                               height: 40,
                               decoration: BoxDecoration(
@@ -1028,9 +1028,9 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                 ),
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       6, 0, 6, 0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -1038,7 +1038,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                     },
                                     child: Text(
                                       'تجارب شخصية',
@@ -1062,7 +1062,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                             child: Container(
                               height: 40,
                               decoration: BoxDecoration(
@@ -1072,9 +1072,9 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                 ),
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       6, 0, 6, 0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -1082,7 +1082,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                     },
                                     child: Text(
                                       'Case Studies',
@@ -1106,7 +1106,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                             child: Container(
                               height: 40,
                               decoration: BoxDecoration(
@@ -1116,9 +1116,9 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                 ),
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       6, 0, 6, 0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -1126,7 +1126,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                     },
                                     child: Text(
                                       'منصات التواصل الاجتماعي',
@@ -1150,7 +1150,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                             child: Container(
                               height: 40,
                               decoration: BoxDecoration(
@@ -1160,9 +1160,9 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                 ),
                               ),
                               child: Align(
-                                alignment: AlignmentDirectional(0, 0),
+                                alignment: const AlignmentDirectional(0, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       6, 0, 6, 0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -1170,7 +1170,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                                     },
                                     child: Text(
                                       'عن ماركتيكا',
@@ -1203,7 +1203,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                 phone: false,
               ))
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 12, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 12, 0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -1236,7 +1236,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                       height: 40,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).alternate,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 3,
                             color: Color(0x33000000),
@@ -1246,15 +1246,15 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(2),
+                        padding: const EdgeInsets.all(2),
                         child: Stack(
-                          alignment: AlignmentDirectional(0, 0),
+                          alignment: const AlignmentDirectional(0, 0),
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-0.9, 0),
+                              alignment: const AlignmentDirectional(-0.9, 0),
                               child: Padding(
                                 padding:
-                                EdgeInsetsDirectional.fromSTEB(6, 0, 0, 0),
+                                const EdgeInsetsDirectional.fromSTEB(6, 0, 0, 0),
                                 child: Icon(
                                   Icons.sunny,
                                   color: FlutterFlowTheme.of(context)
@@ -1264,10 +1264,10 @@ class _TopNavWidgetState extends State<TopNavWidget>
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(1, 0),
+                              alignment: const AlignmentDirectional(1, 0),
                               child: Padding(
                                 padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                                const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
                                 child: Icon(
                                   Icons.nights_stay_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -1277,14 +1277,14 @@ class _TopNavWidgetState extends State<TopNavWidget>
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(1, 0),
+                              alignment: const AlignmentDirectional(1, 0),
                               child: Container(
                                 width: 36,
                                 height: 36,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 4,
                                       color: Color(0x430B0D0F),
@@ -1313,7 +1313,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                 desktop: false,
               ))
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
                   child: AlignedTooltip(
                     content: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(8, 4, 8, 4),
@@ -1355,7 +1355,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                   ),
                 ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
                 child: badges.Badge(
                   badgeContent: Text(
                     notifications.length.toString(),
@@ -1449,7 +1449,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
           desktop: false,
         ) && tabsIsOpen)
           Padding(
-            padding: EdgeInsets.all(6),
+            padding: const EdgeInsets.all(6),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -1457,7 +1457,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                     child: Container(
                       height: 35,
                       decoration: BoxDecoration(
@@ -1467,16 +1467,16 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: const AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),));
                             },
                             child: Text(
                               'الرئيسية',
@@ -1499,7 +1499,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                     child: Container(
                       height: 35,
                       decoration: BoxDecoration(
@@ -1509,16 +1509,16 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: const AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                             },
                             child: Text(
                               'Tips & Tricks',
@@ -1541,7 +1541,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                     child: Container(
                       height: 35,
                       decoration: BoxDecoration(
@@ -1551,16 +1551,16 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: const AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                             },
                             child: Text(
                               'يلا نرغي',
@@ -1583,7 +1583,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                     child: Container(
                       height: 35,
                       decoration: BoxDecoration(
@@ -1593,16 +1593,16 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: const AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                             },
                             child: Text(
                               'ادوات',
@@ -1625,7 +1625,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                     child: Container(
                       height: 35,
                       decoration: BoxDecoration(
@@ -1635,16 +1635,16 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: const AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                             },
                             child: Text(
                               'تجارب شخصية',
@@ -1667,7 +1667,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                     child: Container(
                       height: 35,
                       decoration: BoxDecoration(
@@ -1677,16 +1677,16 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: const AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                             },
                             child: Text(
                               'Case Studies',
@@ -1709,7 +1709,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                     child: Container(
                       height: 35,
                       decoration: BoxDecoration(
@@ -1719,16 +1719,16 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: const AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                             },
                             child: Text(
                               'منصات التواصل الاجتماعي',
@@ -1751,7 +1751,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                     child: Container(
                       height: 35,
                       decoration: BoxDecoration(
@@ -1761,16 +1761,16 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         ),
                       ),
                       child: Align(
-                        alignment: AlignmentDirectional(0, 0),
+                        alignment: const AlignmentDirectional(0, 0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsPage(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
                             },
                             child: Text(
                               'عن ماركتيكا',
