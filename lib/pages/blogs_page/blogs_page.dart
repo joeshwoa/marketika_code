@@ -1,15 +1,19 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterflow_ui_pro/flutterflow_ui_pro.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:marketika_website/components/blod_card/blog_card_widget.dart';
+import 'package:marketika_website/components/blog_card/blog_card_widget.dart';
 import 'package:marketika_website/components/top_nav/top_nav_widget.dart';
+import 'package:marketika_website/main.dart';
 
 import 'blogs_page_model.dart';
 export 'blogs_page_model.dart';
 
 class BlogsPage extends StatefulWidget {
-  const BlogsPage({super.key});
+  const BlogsPage({super.key, required this.name, required this.type, required this.index});
+
+  final String name;
+  final String type;
+  final int index;
 
   @override
   State<BlogsPage> createState() => _BlogsPageState();
@@ -19,6 +23,9 @@ class _BlogsPageState extends State<BlogsPage> {
   late BlogsPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  late ScrollController _scrollController;
+  List<BlogCardWidget> _blogCards = [];
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -26,13 +33,45 @@ class _BlogsPageState extends State<BlogsPage> {
     _model = createModel(context, () => BlogsPageModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+
+    _scrollController = ScrollController()..addListener(_scrollListener);
+    _fetchBlogCards();
   }
 
   @override
   void dispose() {
     _model.dispose();
-
+    _scrollController.dispose();
     super.dispose();
+  }
+
+  void _scrollListener() {
+    if (_scrollController.position.extentAfter < 500 && !isLoading) {
+      _fetchBlogCards();
+    }
+  }
+
+  Future<void> _fetchBlogCards() async {
+    setState(() {
+      isLoading = true;
+    });
+
+    final data = await supabase.from('blogs').select().eq('type', widget.type).range(_blogCards.length, _blogCards.length+10);
+
+    setState(() {
+      final blogCards = data
+          .map((blogCardData) => BlogCardWidget(
+        id: blogCardData['id'] as int,
+        imageUrl: blogCardData['imageUrl'] as String,
+        title: blogCardData['title'] as String,
+        description: blogCardData['description'] as String,
+        publishDate: DateTime.parse(blogCardData['created_at'] as String),
+      ))
+          .toList();
+
+      _blogCards.addAll(blogCards);
+      isLoading = false;
+    });
   }
 
   @override
@@ -52,14 +91,14 @@ class _BlogsPageState extends State<BlogsPage> {
               wrapWithModel(
                 model: _model.topNavModel,
                 updateCallback: () => setState(() {}),
-                child: TopNavWidget(),
+                child: TopNavWidget(index: widget.index,),
               ),
               Align(
-                alignment: AlignmentDirectional(-1, 0),
+                alignment: const AlignmentDirectional(-1, 0),
                 child: Padding(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Text(
-                    'Tips & Tricks',
+                    widget.name,
                     style: FlutterFlowTheme.of(context).titleLarge.override(
                       fontFamily:
                       FlutterFlowTheme.of(context).titleLargeFamily,
@@ -77,25 +116,22 @@ class _BlogsPageState extends State<BlogsPage> {
                 tabletLandscape: false,
               ))
                 Expanded(
-                  child: GridView(
+                  child: !(isLoading && _blogCards.isEmpty)?
+                  GridView.builder(
+                    controller: _scrollController,
                     padding: EdgeInsets.zero,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       childAspectRatio: 0.8,
                     ),
                     scrollDirection: Axis.vertical,
-                    children: [
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                    ],
+                    itemBuilder: (context, index) => _blogCards[index],
+                    itemCount: _blogCards.length,
+                  ):
+                  const Center(
+                    child: CircularProgressIndicator(),
                   ),
                 ),
               if (responsiveVisibility(
@@ -104,24 +140,22 @@ class _BlogsPageState extends State<BlogsPage> {
                 desktop: false,
               ))
                 Expanded(
-                  child: GridView(
+                  child: !(isLoading && _blogCards.isEmpty)?
+                  GridView.builder(
+                    controller: _scrollController,
                     padding: EdgeInsets.zero,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       childAspectRatio: 0.8,
                     ),
                     scrollDirection: Axis.vertical,
-                    children: [
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                    ],
+                    itemBuilder: (context, index) => _blogCards[index],
+                    itemCount: _blogCards.length,
+                  ):
+                  const Center(
+                    child: CircularProgressIndicator(),
                   ),
                 ),
               if (responsiveVisibility(
@@ -131,21 +165,22 @@ class _BlogsPageState extends State<BlogsPage> {
                 desktop: false,
               ))
                 Expanded(
-                  child: GridView(
+                  child: !(isLoading && _blogCards.isEmpty)?
+                  GridView.builder(
+                    controller: _scrollController,
                     padding: EdgeInsets.zero,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 1,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       childAspectRatio: 1.1,
                     ),
                     scrollDirection: Axis.vertical,
-                    children: [
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                      BlogCardWidget(),
-                    ],
+                    itemBuilder: (context, index) => _blogCards[index],
+                    itemCount: _blogCards.length,
+                  ):
+                  const Center(
+                    child: CircularProgressIndicator(),
                   ),
                 ),
             ],

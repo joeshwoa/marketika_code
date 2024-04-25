@@ -1,5 +1,6 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutterflow_ui_pro/flutterflow_ui_pro.dart';
+import 'package:marketika_website/components/nav_tab/nav_tab_widget.dart';
 import 'package:marketika_website/dropdown/dropdown_notifications/dropdown_notifications_widget.dart';
 import 'package:marketika_website/pages/blogs_page/blogs_page.dart';
 import 'package:marketika_website/pages/home_page/home_page.dart';
@@ -17,7 +18,8 @@ import 'top_nav_model.dart';
 export 'top_nav_model.dart';
 
 class TopNavWidget extends StatefulWidget {
-  const TopNavWidget({super.key});
+  const TopNavWidget({super.key, this.index = -1});
+  final int index;
 
   @override
   State<TopNavWidget> createState() => _TopNavWidgetState();
@@ -503,325 +505,61 @@ class _TopNavWidgetState extends State<TopNavWidget>
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                          child: Align(
-                            alignment: const AlignmentDirectional(0, 0),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),));
-                                },
-                                child: Text(
-                                  'الرئيسية',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily,
-                                    fontSize: 18,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation1']!),
-                            ),
-                          ),
+                        NavTabWidget(
+                          title: 'الرئيسية',
+                          onTap: () async {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),));
+                          },
+                          selected: widget.index == 0,
                         ),
-                        Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                          child: Align(
-                            alignment: const AlignmentDirectional(0, 0),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                },
-                                child: Text(
-                                  'Tips & Tricks',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily,
-                                    fontSize: 18,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation2']!),
-                            ),
-                          ),
+                        NavTabWidget(
+                          title: 'Tips & Tricks',
+                          onTap: () async {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Tips & Tricks',type: 'tips',index: 1,),));
+                          },
+                          selected: widget.index == 1,
                         ),
-                        Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                          child: Align(
-                            alignment: const AlignmentDirectional(0, 0),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                },
-                                child: Text(
-                                  'يلا نرغي',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily,
-                                    fontSize: 18,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation3']!),
-                            ),
-                          ),
+                        NavTabWidget(
+                          title: 'يلا نرغي',
+                          onTap: () async {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'talk',index: 2,),));
+                          },
+                          selected: widget.index == 2,
                         ),
-                        Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                          child: Align(
-                            alignment: const AlignmentDirectional(0, 0),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                },
-                                child: Text(
-                                  'ادوات',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily,
-                                    fontSize: 18,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation4']!),
-                            ),
-                          ),
+                        NavTabWidget(
+                          title: 'ادوات',
+                          onTap: () async {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'ادوات',type: 'tools',index: 3,),));
+                          },
+                          selected: widget.index == 3,
                         ),
-                        Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                          child: Align(
-                            alignment: const AlignmentDirectional(0, 0),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                },
-                                child: Text(
-                                  'تجارب شخصية',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily,
-                                    fontSize: 18,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation5']!),
-                            ),
-                          ),
+                        NavTabWidget(
+                          title: 'تجارب شخصية',
+                          onTap: () async {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'تجارب شخصية',type: 'personal',index: 4,),));
+                          },
+                          selected: widget.index == 4,
                         ),
-                        Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                          child: Align(
-                            alignment: const AlignmentDirectional(0, 0),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                },
-                                child: Text(
-                                  'Case Studies',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily,
-                                    fontSize: 18,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation6']!),
-                            ),
-                          ),
+                        NavTabWidget(
+                          title: 'Case Studies',
+                          onTap: () async {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Case Studies',type: 'case',index: 5,),));
+                          },
+                          selected: widget.index == 5,
                         ),
-                        Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                          child: Align(
-                            alignment: const AlignmentDirectional(0, 0),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                },
-                                child: Text(
-                                  'منصات التواصل الاجتماعي',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily,
-                                    fontSize: 18,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation7']!),
-                            ),
-                          ),
+                        NavTabWidget(
+                          title: 'منصات التواصل الاجتماعي',
+                          onTap: () async {
+                            /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                          },
+                          selected: widget.index == 6,
                         ),
-                        Container(
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                          child: Align(
-                            alignment: const AlignmentDirectional(0, 0),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                },
-                                child: Text(
-                                  'عن ماركتيكا',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily,
-                                    fontSize: 18,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily),
-                                  ),
-                                ),
-                              ).animateOnPageLoad(
-                                  animationsMap['textOnPageLoadAnimation8']!),
-                            ),
-                          ),
+                        NavTabWidget(
+                          title: 'عن ماركتيكا',
+                          onTap: () async {
+                            /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                          },
+                          selected: widget.index == 7,
                         ),
                       ],
                     ),
@@ -841,357 +579,61 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Align(
-                                alignment: const AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      6, 0, 6, 0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),));
-                                    },
-                                    child: Text(
-                                      'الرئيسية',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                        fontFamily:
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
-                                        fontSize: 18,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .headlineSmallFamily),
-                                      ),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                  'textOnPageLoadAnimation9']!),
-                                ),
-                              ),
-                            ),
+                          NavTabWidget(
+                            title: 'الرئيسية',
+                            onTap: () async {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),));
+                            },
+                            selected: widget.index == 0,
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Align(
-                                alignment: const AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      6, 0, 6, 0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                    },
-                                    child: Text(
-                                      'Tips & Tricks',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                        fontFamily:
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
-                                        fontSize: 18,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .headlineSmallFamily),
-                                      ),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                  'textOnPageLoadAnimation10']!),
-                                ),
-                              ),
-                            ),
+                          NavTabWidget(
+                            title: 'Tips & Tricks',
+                            onTap: () async {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Tips & Tricks',type: 'tips',index: 1,),));
+                            },
+                            selected: widget.index == 1,
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Align(
-                                alignment: const AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      6, 0, 6, 0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                    },
-                                    child: Text(
-                                      'يلا نرغي',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                        fontFamily:
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
-                                        fontSize: 18,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .headlineSmallFamily),
-                                      ),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                  'textOnPageLoadAnimation11']!),
-                                ),
-                              ),
-                            ),
+                          NavTabWidget(
+                            title: 'يلا نرغي',
+                            onTap: () async {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'talk',index: 2,),));
+                            },
+                            selected: widget.index == 2,
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Align(
-                                alignment: const AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      6, 0, 6, 0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                    },
-                                    child: Text(
-                                      'ادوات',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                        fontFamily:
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
-                                        fontSize: 18,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .headlineSmallFamily),
-                                      ),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                  'textOnPageLoadAnimation12']!),
-                                ),
-                              ),
-                            ),
+                          NavTabWidget(
+                            title: 'ادوات',
+                            onTap: () async {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'ادوات',type: 'tools',index: 3,),));
+                            },
+                            selected: widget.index == 3,
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Align(
-                                alignment: const AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      6, 0, 6, 0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                    },
-                                    child: Text(
-                                      'تجارب شخصية',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                        fontFamily:
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
-                                        fontSize: 18,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .headlineSmallFamily),
-                                      ),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                  'textOnPageLoadAnimation13']!),
-                                ),
-                              ),
-                            ),
+                          NavTabWidget(
+                            title: 'تجارب شخصية',
+                            onTap: () async {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'تجارب شخصية',type: 'personal',index: 4,),));
+                            },
+                            selected: widget.index == 4,
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Align(
-                                alignment: const AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      6, 0, 6, 0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                    },
-                                    child: Text(
-                                      'Case Studies',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                        fontFamily:
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
-                                        fontSize: 18,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .headlineSmallFamily),
-                                      ),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                  'textOnPageLoadAnimation14']!),
-                                ),
-                              ),
-                            ),
+                          NavTabWidget(
+                            title: 'Case Studies',
+                            onTap: () async {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Case Studies',type: 'case',index: 5,),));
+                            },
+                            selected: widget.index == 5,
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Align(
-                                alignment: const AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      6, 0, 6, 0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                    },
-                                    child: Text(
-                                      'منصات التواصل الاجتماعي',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                        fontFamily:
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
-                                        fontSize: 18,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .headlineSmallFamily),
-                                      ),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                  'textOnPageLoadAnimation15']!),
-                                ),
-                              ),
-                            ),
+                          NavTabWidget(
+                            title: 'منصات التواصل الاجتماعي',
+                            onTap: () async {
+                              /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                            },
+                            selected: widget.index == 6,
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                            child: Container(
-                              height: 40,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Align(
-                                alignment: const AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      6, 0, 6, 0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                                    },
-                                    child: Text(
-                                      'عن ماركتيكا',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                        fontFamily:
-                                        FlutterFlowTheme.of(context)
-                                            .headlineSmallFamily,
-                                        fontSize: 18,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .headlineSmallFamily),
-                                      ),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                  'textOnPageLoadAnimation16']!),
-                                ),
-                              ),
-                            ),
+                          NavTabWidget(
+                            title: 'عن ماركتيكا',
+                            onTap: () async {
+                              /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                            },
+                            selected: widget.index == 7,
                           ),
                         ],
                       ),
@@ -1456,341 +898,61 @@ class _TopNavWidgetState extends State<TopNavWidget>
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                    child: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                      child: Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),));
-                            },
-                            child: Text(
-                              'الرئيسية',
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
-                                fontSize: 16,
-                                useGoogleFonts: GoogleFonts.asMap()
-                                    .containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
-                              ),
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['textOnPageLoadAnimation17']!),
-                        ),
-                      ),
-                    ),
+                  NavTabWidget(
+                    title: 'الرئيسية',
+                    onTap: () async {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),));
+                    },
+                    selected: widget.index == 0,
                   ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                    child: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                      child: Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                            },
-                            child: Text(
-                              'Tips & Tricks',
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
-                                fontSize: 16,
-                                useGoogleFonts: GoogleFonts.asMap()
-                                    .containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
-                              ),
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['textOnPageLoadAnimation18']!),
-                        ),
-                      ),
-                    ),
+                  NavTabWidget(
+                    title: 'Tips & Tricks',
+                    onTap: () async {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Tips & Tricks',type: 'tips',index: 1,),));
+                    },
+                    selected: widget.index == 1,
                   ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                    child: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                      child: Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                            },
-                            child: Text(
-                              'يلا نرغي',
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
-                                fontSize: 16,
-                                useGoogleFonts: GoogleFonts.asMap()
-                                    .containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
-                              ),
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['textOnPageLoadAnimation19']!),
-                        ),
-                      ),
-                    ),
+                  NavTabWidget(
+                    title: 'يلا نرغي',
+                    onTap: () async {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'talk',index: 2,),));
+                    },
+                    selected: widget.index == 2,
                   ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                    child: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                      child: Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                            },
-                            child: Text(
-                              'ادوات',
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
-                                fontSize: 16,
-                                useGoogleFonts: GoogleFonts.asMap()
-                                    .containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
-                              ),
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['textOnPageLoadAnimation20']!),
-                        ),
-                      ),
-                    ),
+                  NavTabWidget(
+                    title: 'ادوات',
+                    onTap: () async {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'ادوات',type: 'tools',index: 3,),));
+                    },
+                    selected: widget.index == 3,
                   ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                    child: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                      child: Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                            },
-                            child: Text(
-                              'تجارب شخصية',
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
-                                fontSize: 16,
-                                useGoogleFonts: GoogleFonts.asMap()
-                                    .containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
-                              ),
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['textOnPageLoadAnimation21']!),
-                        ),
-                      ),
-                    ),
+                  NavTabWidget(
+                    title: 'تجارب شخصية',
+                    onTap: () async {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'تجارب شخصية',type: 'personal',index: 4,),));
+                    },
+                    selected: widget.index == 4,
                   ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                    child: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                      child: Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                            },
-                            child: Text(
-                              'Case Studies',
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
-                                fontSize: 16,
-                                useGoogleFonts: GoogleFonts.asMap()
-                                    .containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
-                              ),
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['textOnPageLoadAnimation22']!),
-                        ),
-                      ),
-                    ),
+                  NavTabWidget(
+                    title: 'Case Studies',
+                    onTap: () async {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Case Studies',type: 'case',index: 5,),));
+                    },
+                    selected: widget.index == 5,
                   ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                    child: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                      child: Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                            },
-                            child: Text(
-                              'منصات التواصل الاجتماعي',
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
-                                fontSize: 16,
-                                useGoogleFonts: GoogleFonts.asMap()
-                                    .containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
-                              ),
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['textOnPageLoadAnimation23']!),
-                        ),
-                      ),
-                    ),
+                  NavTabWidget(
+                    title: 'منصات التواصل الاجتماعي',
+                    onTap: () async {
+                      /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                    },
+                    selected: widget.index == 6,
                   ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                    child: Container(
-                      height: 35,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                      ),
-                      child: Align(
-                        alignment: const AlignmentDirectional(0, 0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(),));
-                            },
-                            child: Text(
-                              'عن ماركتيكا',
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .headlineSmallFamily,
-                                fontSize: 16,
-                                useGoogleFonts: GoogleFonts.asMap()
-                                    .containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .headlineSmallFamily),
-                              ),
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['textOnPageLoadAnimation24']!),
-                        ),
-                      ),
-                    ),
+                  NavTabWidget(
+                    title: 'عن ماركتيكا',
+                    onTap: () async {
+                      /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                    },
+                    selected: widget.index == 7,
                   ),
                 ],
               ),

@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutterflow_ui_pro/flutterflow_ui_pro.dart';
 
-class PageNameInFooterWidget extends StatelessWidget {
+class PageNameInFooterWidget extends StatefulWidget {
   const PageNameInFooterWidget({super.key, required this.name});
   final String name;
 
   @override
+  State<PageNameInFooterWidget> createState() => _PageNameInFooterWidgetState();
+}
+
+class _PageNameInFooterWidgetState extends State<PageNameInFooterWidget> {
+
+  bool isHover = false;
+
+  @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(1, 0),
+      alignment: const AlignmentDirectional(1, 0),
       child: InkWell(
         splashColor: Colors.transparent,
         focusColor: Colors.transparent,
@@ -17,13 +25,19 @@ class PageNameInFooterWidget extends StatelessWidget {
         onTap: () async {
 
         },
-        onHover: (bool isHover) {
-
+        onHover: (bool hovering) {
+          setState(() {
+            isHover = hovering;
+          });
         },
         child: Text(
-          name,
+          widget.name,
           style: FlutterFlowTheme.of(context)
-              .bodyMedium,
+              .bodyMedium.override(
+            fontFamily: FlutterFlowTheme.of(context)
+                .bodyMediumFamily,
+            fontWeight: isHover?FontWeight.w700:FontWeight.w500
+          ),
         ),
       ),
     );

@@ -15,18 +15,18 @@ import 'package:marketika_website/components/top_nav/top_nav_widget.dart';
 import 'blog_page_model.dart';
 export 'blog_page_model.dart';
 
-class ProductDetailsWidget extends StatefulWidget {
-  const ProductDetailsWidget({
+class BlogPage extends StatefulWidget {
+  const BlogPage({
     super.key,
   });
 
   @override
-  State<ProductDetailsWidget> createState() => _ProductDetailsWidgetState();
+  State<BlogPage> createState() => _BlogPageState();
 }
 
-class _ProductDetailsWidgetState extends State<ProductDetailsWidget>
+class _BlogPageState extends State<BlogPage>
     with TickerProviderStateMixin {
-  late ProductDetailsModel _model;
+  late BlogPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -196,7 +196,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ProductDetailsModel());
+    _model = createModel(context, () => BlogPageModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {

@@ -2,10 +2,10 @@ import 'package:flutterflow_ui_pro/flutterflow_ui_pro.dart';
 import 'package:marketika_website/components/gradient_button/gradient_button_model.dart';
 import 'package:marketika_website/components/top_nav/top_nav_model.dart';
 
-import 'blog_page.dart' show ProductDetailsWidget;
+import 'blog_page.dart' show BlogPage;
 import 'package:flutter/material.dart';
 
-class ProductDetailsModel extends FlutterFlowModel<ProductDetailsWidget> {
+class BlogPageModel extends FlutterFlowModel<BlogPage> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
