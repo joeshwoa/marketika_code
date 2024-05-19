@@ -56,7 +56,7 @@ class _BlogsPageState extends State<BlogsPage> {
       isLoading = true;
     });
 
-    final data = await supabase.from('blogs').select().eq('type', widget.type).range(_blogCards.length, _blogCards.length+10);
+    final data = await supabase.from('blogs').select('id, imageUrl, title, description, created_at').eq('type', widget.type).range(_blogCards.length, _blogCards.length+9).order('created_at');
 
     setState(() {
       final blogCards = data

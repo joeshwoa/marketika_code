@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutterflow_ui_pro/flutterflow_ui_pro.dart';
 
 class PageNameInFooterWidget extends StatefulWidget {
-  const PageNameInFooterWidget({super.key, required this.name});
+  const PageNameInFooterWidget({super.key, required this.name, required this.onTap});
   final String name;
+  final Function() onTap;
 
   @override
   State<PageNameInFooterWidget> createState() => _PageNameInFooterWidgetState();
@@ -22,9 +23,7 @@ class _PageNameInFooterWidgetState extends State<PageNameInFooterWidget> {
         focusColor: Colors.transparent,
         hoverColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        onTap: () async {
-
-        },
+        onTap: widget.onTap,
         onHover: (bool hovering) {
           setState(() {
             isHover = hovering;

@@ -58,6 +58,7 @@ class _HomePageState extends State<HomePage>
   List<AdCardWidget> _adCards = [];
   bool loadAdCards = false;
   List<BlogCardWidget> _blogCards = [];
+  List<BlogCardWidget> _searchBlogCards = [];
   bool loadBlogCards = false;
 
   @override
@@ -145,6 +146,31 @@ class _HomePageState extends State<HomePage>
       ))
           .toList();
       loadBlogCards = false;
+    });
+  }
+
+  Future<void> _searchBlogs() async {
+    setState(() {
+      _searchBlogCards.clear();
+    });
+    // Make a request to get last three blog cards from Supabase
+    final data = await supabase
+        .from('blogs')
+        .select('id, imageUrl, title, description, created_at')
+        .or('author_name.ilike.%${_model.searchController.text}%,author_location.ilike.%${_model.searchController.text}%,title.ilike.%${_model.searchController.text}%,description.ilike.%${_model.searchController.text}%')
+        .order('created_at', ascending: false)
+        .limit(3);
+
+    setState(() {
+      _searchBlogCards = data
+          .map((blogCardData) => BlogCardWidget(
+        id: blogCardData['id'] as int,
+        imageUrl: blogCardData['imageUrl'] as String,
+        title: blogCardData['title'] as String,
+        description: blogCardData['description'] as String,
+        publishDate: DateTime.parse(blogCardData['created_at'] as String),
+      ))
+          .toList();
     });
   }
 
@@ -333,21 +359,37 @@ class _HomePageState extends State<HomePage>
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Container(
-                                    width: 50,
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context).primary,
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: const Color(0x00FFFFFF),
+                                  InkWell(
+                                    splashColor: Colors
+                                        .transparent,
+                                    focusColor: Colors
+                                        .transparent,
+                                    hoverColor: Colors
+                                        .transparent,
+                                    highlightColor:
+                                    Colors
+                                        .transparent,
+                                    onTap: () async {
+                                      if(_model.searchController!.text.isNotEmpty) {
+                                        await _searchBlogs();
+                                      }
+                                    },
+                                    child: Container(
+                                      width: 50,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context).primary,
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: const Color(0x00FFFFFF),
+                                        ),
                                       ),
-                                    ),
-                                    child: Icon(
-                                      Icons.search_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      size: 24,
+                                      child: Icon(
+                                        Icons.search_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        size: 24,
+                                      ),
                                     ),
                                   ),
                                   Expanded(
@@ -357,7 +399,7 @@ class _HomePageState extends State<HomePage>
                                       child: TextFormField(
                                         controller: _model.searchController,
                                         focusNode: _model.searchFieldFocusNode,
-                                        autofocus: true,
+                                        autofocus: false,
                                         textInputAction: TextInputAction.search,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -409,6 +451,11 @@ class _HomePageState extends State<HomePage>
                                         textAlign: TextAlign.end,
                                         validator: _model.searchControllerValidator
                                             .asValidator(context),
+                                        onFieldSubmitted: (value) async {
+                                          if(_model.searchController!.text.isNotEmpty) {
+                                            await _searchBlogs();
+                                          }
+                                        },
                                       ),
                                     ),
                                   ),
@@ -629,7 +676,7 @@ class _HomePageState extends State<HomePage>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   12, 16, 12, 16),
                               child: Text(
-                                'احدث المقالات',
+                                _searchBlogCards.isNotEmpty?'نتائج البحث':'احدث المقالات',
                                 textAlign: TextAlign.end,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -659,8 +706,13 @@ class _HomePageState extends State<HomePage>
                             child: Padding(
                               padding:
                               const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                              child: !loadBlogCards?
-                              Row(
+                              child: _searchBlogCards.isNotEmpty? Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceEvenly,
+                                children: _searchBlogCards,
+                              ):
+                              !loadBlogCards? Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                 MainAxisAlignment.spaceEvenly,
@@ -683,8 +735,13 @@ class _HomePageState extends State<HomePage>
                             child: Padding(
                               padding:
                               const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                              child: loadBlogCards?
-                              Row(
+                              child: _searchBlogCards.isNotEmpty? Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceEvenly,
+                                children: _searchBlogCards,
+                              ):
+                              !loadBlogCards? Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                 MainAxisAlignment.spaceEvenly,
@@ -707,8 +764,11 @@ class _HomePageState extends State<HomePage>
                             child: Padding(
                               padding:
                               const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                              child: loadBlogCards?
-                              Column(
+                              child: _searchBlogCards.isNotEmpty? Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: _searchBlogCards,
+                              ):
+                              !loadBlogCards? Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: _blogCards,
                               ):
@@ -773,7 +833,7 @@ class _HomePageState extends State<HomePage>
                                         child: TextFormField(
                                           controller: _model.nameController,
                                           focusNode: _model.nameFieldFocusNode,
-                                          autofocus: true,
+                                          autofocus: false,
                                           autofillHints: const [AutofillHints.name],
                                           textInputAction: TextInputAction.next,
                                           obscureText: false,
@@ -862,7 +922,7 @@ class _HomePageState extends State<HomePage>
                                         child: TextFormField(
                                           controller: _model.emailController,
                                           focusNode: _model.emailFieldFocusNode,
-                                          autofocus: true,
+                                          autofocus: false,
                                           autofillHints: const [AutofillHints.email],
                                           textInputAction: TextInputAction.done,
                                           obscureText: false,
@@ -1041,7 +1101,7 @@ class _HomePageState extends State<HomePage>
                                         child: TextFormField(
                                           controller: _model.nameController,
                                           focusNode: _model.nameFieldFocusNode,
-                                          autofocus: true,
+                                          autofocus: false,
                                           autofillHints: const [AutofillHints.name],
                                           textInputAction: TextInputAction.next,
                                           obscureText: false,
@@ -1130,7 +1190,7 @@ class _HomePageState extends State<HomePage>
                                         child: TextFormField(
                                           controller: _model.emailController,
                                           focusNode: _model.emailFieldFocusNode,
-                                          autofocus: true,
+                                          autofocus: false,
                                           autofillHints: const [AutofillHints.email],
                                           textInputAction: TextInputAction.done,
                                           obscureText: false,
@@ -1310,7 +1370,7 @@ class _HomePageState extends State<HomePage>
                                         child: TextFormField(
                                           controller: _model.nameController,
                                           focusNode: _model.nameFieldFocusNode,
-                                          autofocus: true,
+                                          autofocus: false,
                                           autofillHints: const [AutofillHints.name],
                                           textInputAction: TextInputAction.next,
                                           obscureText: false,
@@ -1399,7 +1459,7 @@ class _HomePageState extends State<HomePage>
                                         child: TextFormField(
                                           controller: _model.emailController,
                                           focusNode: _model.emailFieldFocusNode,
-                                          autofocus: true,
+                                          autofocus: false,
                                           autofillHints: const [AutofillHints.email],
                                           textInputAction: TextInputAction.done,
                                           obscureText: false,

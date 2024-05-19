@@ -33,7 +33,9 @@ class _BlogCardWidgetState extends State<BlogCardWidget> {
     super.initState();
     initializeDateFormatting('ar', null).then((_) {
       DateFormat formatter = DateFormat.MMMM('ar');
-      month = formatter.format(widget.publishDate);
+      setState(() {
+        month = formatter.format(widget.publishDate);
+      });
     });
   }
   @override
@@ -54,8 +56,8 @@ class _BlogCardWidgetState extends State<BlogCardWidget> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const BlogPage(
-                /*id: widget.id,*/
+              builder: (context) => BlogPage(
+                id: widget.id,
               ),
             ),
           );
@@ -282,9 +284,9 @@ class _BlogCardWidgetState extends State<BlogCardWidget> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const BlogPage(
-                    /*id: widget.id,*/
-                    ),
+                builder: (context) => BlogPage(
+                    id: widget.id,
+                ),
               ),
             );
           },
@@ -423,9 +425,9 @@ class _BlogCardWidgetState extends State<BlogCardWidget> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const BlogPage(
-                    /*id: widget.id,*/
-                    ),
+                builder: (context) => BlogPage(
+                    id: widget.id,
+                ),
               ),
             );
           },

@@ -8,7 +8,7 @@ export 'dropdown_notifications_model.dart';
 
 class DropdownNotificationsWidget extends StatefulWidget {
   const DropdownNotificationsWidget({super.key,required this.notifications, required this.loading});
-  final List<String> notifications;
+  final List<Map<String, String>> notifications;
   final bool loading;
 
   @override
@@ -183,7 +183,7 @@ class _DropdownNotificationsWidgetState
                               },*/
                           child: Container(
                             width: double.infinity,
-                            height: 60,
+                            height: 70,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).secondaryBackground,
                               boxShadow: [
@@ -240,7 +240,7 @@ class _DropdownNotificationsWidgetState
                                         CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'New Discount',
+                                            notification['title']!,
                                             style:
                                             FlutterFlowTheme.of(context)
                                                 .bodyLarge,
@@ -250,22 +250,16 @@ class _DropdownNotificationsWidgetState
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0, 4, 0, 0),
                                               child: Text(
-                                                'Discount on Instagram ads now',
+                                                notification['body']!,
                                                 style: FlutterFlowTheme.of(
                                                     context)
-                                                    .labelMedium,
+                                                    .labelSmall,
                                               ),
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
-                                  ),
-                                  Text(
-                                    '3m ago',
-                                    textAlign: TextAlign.end,
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelSmall,
                                   ),
                                 ],
                               ),

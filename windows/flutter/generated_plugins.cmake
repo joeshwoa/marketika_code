@@ -4,7 +4,9 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   app_links
+  irondash_engine_context
   rive_common
+  super_native_extensions
   url_launcher_windows
 )
 

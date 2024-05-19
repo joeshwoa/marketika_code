@@ -3,9 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:marketika_website/pages/home_page/home_page.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:meta_seo/meta_seo.dart';
+import 'package:flutter/foundation.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  if (kIsWeb) {
+    MetaSEO().config();
+  }
 
   await dotenv.load(fileName: ".env");
 
@@ -25,6 +31,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    f(kIsWeb) {
+      // Define MetaSEO object
+      MetaSEO meta = MetaSEO();
+      // add meta seo data for web app as you want
+      meta.ogTitle(ogTitle: 'Marketika');
+      meta.ogDescription(ogDescription: 'Market');
+      meta.description(description: 'Market');
+      meta.keywords(keywords: 'Market, Marketing, ADs, Marketika, Marketika Site, Marketika Website, Marketika Web, Marketika Web Site, Marketing Blogs, Marketing Articles');
+    }
+
     return AdaptiveTheme(
       light: ThemeData(
         useMaterial3: true,
@@ -38,7 +55,7 @@ class MyApp extends StatelessWidget {
       ),
       initial: AdaptiveThemeMode.light,
       builder: (theme, darkTheme) => MaterialApp(
-        title: 'Scout Chess Challenge',
+        title: 'Marketika',
         theme: theme,
         darkTheme: darkTheme,
         home: const HomePage(),

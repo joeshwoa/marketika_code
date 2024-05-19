@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutterflow_ui_pro/flutterflow_ui_pro.dart';
 import 'package:marketika_website/components/nav_tab/nav_tab_widget.dart';
 import 'package:marketika_website/dropdown/dropdown_notifications/dropdown_notifications_widget.dart';
+import 'package:marketika_website/main.dart';
 import 'package:marketika_website/pages/blogs_page/blogs_page.dart';
 import 'package:marketika_website/pages/home_page/home_page.dart';
 
@@ -405,7 +406,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
     ),
   };
 
-  List<String> notifications = [];
+  List<Map<String, String>> notifications = [];
   bool loading = false;
 
   bool tabsIsOpen = false;
@@ -430,6 +431,25 @@ class _TopNavWidgetState extends State<TopNavWidget>
               .reverse();
         }
       }
+    });
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+
+      setState(() {
+        loading = true;
+      });
+
+      final data = await supabase.from('notifications').select('title, body').order('created_at');
+      notifications = data
+          .map((notification) => {
+        'title': notification['title'] as String,
+        'body': notification['body'] as String,
+      }).toList();
+
+      setState(() {
+        loading = false;
+      });
     });
 
     setupAnimations(
@@ -550,7 +570,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         NavTabWidget(
                           title: 'منصات التواصل الاجتماعي',
                           onTap: () async {
-                            /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'منصات التواصل الاجتماعي',type: 'social',index: 2,),));
                           },
                           selected: widget.index == 6,
                         ),
