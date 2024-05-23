@@ -141,6 +141,7 @@ class _BlogCardWidgetState extends State<BlogCardWidget> {
                                 .height *
                                 0.18,
                             fit: BoxFit.cover,
+                            errorWidget: (context, url, error) => Center(child: Icon(Icons.broken_image_rounded, size: 50, color: FlutterFlowTheme.of(context).primaryText,),),
                           ),
                         ),
                         Container(
@@ -344,6 +345,7 @@ class _BlogCardWidgetState extends State<BlogCardWidget> {
                               width: double.infinity,
                               height: MediaQuery.sizeOf(context).height * 0.18,
                               fit: BoxFit.cover,
+                              errorWidget: (context, url, error) => Center(child: Icon(Icons.broken_image_rounded, size: 50, color: FlutterFlowTheme.of(context).primaryText,),),
                             ),
                           ),
                           Container(
@@ -485,6 +487,7 @@ class _BlogCardWidgetState extends State<BlogCardWidget> {
                               width: double.infinity,
                               height: MediaQuery.sizeOf(context).height * 0.25,
                               fit: BoxFit.cover,
+                              errorWidget: (context, url, error) => Center(child: Icon(Icons.broken_image_rounded, size: 50, color: FlutterFlowTheme.of(context).primaryText,),),
                             ),
                           ),
                           Container(

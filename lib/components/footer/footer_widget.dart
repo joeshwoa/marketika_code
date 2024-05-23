@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterflow_ui_pro/flutterflow_ui_pro.dart';
 import 'package:marketika_website/components/page_name_in_footer/page_name_in_footer_widget.dart';
+import 'package:marketika_website/pages/about_marketika/about_marketika.dart';
 import 'package:marketika_website/pages/blogs_page/blogs_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -63,13 +64,13 @@ class _FooterWidgetState extends State<FooterWidget> {
                     PageNameInFooterWidget(
                       name: 'عن ماركتيكا',
                       onTap: () async {
-                        /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutMarketika(),));
                       },
                     ),
                     PageNameInFooterWidget(
                       name: 'رحلتي',
                       onTap: () async {
-                        /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'تجارب شخصية',type: 'personal',index: 4,),));
                       },
                     ),
                   ],
@@ -133,8 +134,8 @@ class _FooterWidgetState extends State<FooterWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  if (await canLaunchUrl(Uri.parse(''))) {
-                    await launchUrl(Uri.parse(''));
+                  if (await canLaunchUrl(Uri.parse('https://www.facebook.com/marketika.marketing?mibextid=ZbWKwL'))) {
+                    await launchUrl(Uri.parse('https://www.facebook.com/marketika.marketing?mibextid=ZbWKwL'));
                   } else {
                     throw 'Could not launch Facebook';
                   }
@@ -164,8 +165,8 @@ class _FooterWidgetState extends State<FooterWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    if (await canLaunchUrl(Uri.parse(''))) {
-                      await launchUrl(Uri.parse(''));
+                    if (await canLaunchUrl(Uri.parse('https://www.instagram.com/marketika.marketing/?igsh=MTkwa3Y4cHV4eDFkYg%3D%3D'))) {
+                      await launchUrl(Uri.parse('https://www.instagram.com/marketika.marketing/?igsh=MTkwa3Y4cHV4eDFkYg%3D%3D'));
                     } else {
                       throw 'Could not launch Instagram';
                     }
@@ -193,8 +194,8 @@ class _FooterWidgetState extends State<FooterWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  if (await canLaunchUrl(Uri.parse(''))) {
-                    await launchUrl(Uri.parse(''));
+                  if (await canLaunchUrl(Uri.parse('https://www.tiktok.com/@marketika.marketing'))) {
+                    await launchUrl(Uri.parse('https://www.tiktok.com/@marketika.marketing'));
                   } else {
                     throw 'Could not launch TikTok';
                   }

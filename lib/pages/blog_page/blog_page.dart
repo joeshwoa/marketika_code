@@ -581,6 +581,7 @@ class _BlogPageState extends State<BlogPage>
                                                                       400,
                                                                       fit: BoxFit
                                                                           .cover,
+                                                                      errorWidget: (context, url, error) => Center(child: Icon(Icons.broken_image_rounded, size: 50, color: FlutterFlowTheme.of(context).primaryText,),),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -882,6 +883,7 @@ class _BlogPageState extends State<BlogPage>
                                                                         70,
                                                                         fit: BoxFit
                                                                             .cover,
+                                                                        errorWidget: (context, url, error) => Center(child: Icon(Icons.broken_image_rounded, size: 50, color: FlutterFlowTheme.of(context).primaryText,),),
                                                                       ),
                                                                     ),
                                                                     Expanded(

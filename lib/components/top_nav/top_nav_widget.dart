@@ -3,6 +3,7 @@ import 'package:flutterflow_ui_pro/flutterflow_ui_pro.dart';
 import 'package:marketika_website/components/nav_tab/nav_tab_widget.dart';
 import 'package:marketika_website/dropdown/dropdown_notifications/dropdown_notifications_widget.dart';
 import 'package:marketika_website/main.dart';
+import 'package:marketika_website/pages/about_marketika/about_marketika.dart';
 import 'package:marketika_website/pages/blogs_page/blogs_page.dart';
 import 'package:marketika_website/pages/home_page/home_page.dart';
 
@@ -577,7 +578,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                         NavTabWidget(
                           title: 'عن ماركتيكا',
                           onTap: () async {
-                            /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutMarketika(),));
                           },
                           selected: widget.index == 7,
                         ),

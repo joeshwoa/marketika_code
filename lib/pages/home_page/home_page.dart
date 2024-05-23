@@ -9,6 +9,7 @@ import 'package:marketika_website/components/blog_card/blog_card_widget.dart';
 import 'package:marketika_website/components/footer/footer_widget.dart';
 import 'package:marketika_website/components/top_nav/top_nav_widget.dart';
 import 'package:marketika_website/main.dart';
+import 'dart:ui' as ui;
 
 import 'home_page_model.dart';
 export 'home_page_model.dart';
@@ -777,6 +778,344 @@ class _HomePageState extends State<HomePage>
                               ),
                             ),
                           ),
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: SizedBox(
+                            width: double.infinity,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment:
+                              MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  'عن رحلتي ..',
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                    fontFamily:
+                                    FlutterFlowTheme.of(context)
+                                        .titleMediumFamily,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primary,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      208, 8, 20, 20),
+                                  child: Text(
+                                    'بما انكوا فاتحين الجزء ده .. فأنتوا حابين تعرفوا عن رحلة الكفاح اللي حرفياً وبدون مبالغة كانت صعبة بكل ما تحتويه الكلمة من معنى بس في الآخر قدرت اثبتت انها مش مستحيلة كما يعتقد البعض. تعالوا نرجع لورا شوية – انا مارينا يونان عندي 29 سنة وانا قاصدة اقول سني اللي وصلت فيه دلوقتي اني اعمل الويب سايت …',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 18,
+
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                    textDirection: ui.TextDirection.rtl,
+                                  ),
+                                ),
+
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 200, 0),
+                                  child: Text(
+                                    'عن ماركتيكا ..',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primary,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8, 8, 220, 0),
+                                  child: Text(
+                                    'ماركتيكا هي المكان اللي هدفها مساعدة اصحاب الاعمال او الماركتيرز اللي بيشتغلوا في مجال التسويق الرقمي وبالأخص السوشيال ميديا. ماركتيكا بتقدم منصة كاملة تعليمية عشان تتعلم فيها كل حاجة من الألف إلى الياء، من أول انشاء صفحات على السوشيال ميديا بطريقة سليمة وإدارتها بشكل احترافي، وكتابة المحتوى، وعمل خطة كاملة للبيزنس، وبعض الأدوات والنصائح اللي هتخلي شغلك في حته تاني …',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 18,
+
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                    textDirection: ui.TextDirection.rtl,
+                                  ),
+                                ),
+
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 0),
+                                  child: Text(
+                                    'عن الأدوات ..',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primary,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      208, 8, 20, 0),
+                                  child: Text(
+                                    'في القسم الأدوات، هنتكلم عن كل ادوات السوشيال ميديا المجانية والمدفوعة اللي هتخلى شغلنا احسن، واسهل، واسرع. وهنتعلم كمان ازاي نستخدمها، وازي نسجل فيها، ده غير ان هيكون في فيديوهات Tutorials هتساعدك ازاي تستفاد من مميزات كل اداه …',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 18,
+
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                    textDirection: ui.TextDirection.rtl,
+                                  ),
+                                ),
+
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 200, 0),
+                                  child: Text(
+                                    'عن منصات التسويق ..',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primary,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8, 8, 220, 0),
+                                  child: Text(
+                                    'الجزء ده من أهم الأجزاء اللي لازم نتاعبعها بشكل يومي، لأن هنا هتلاقي كل ما يخص منصات السوشيال ميديا وبالتفصيل الممل، وكمان كل التحديثات اللي بتحصل على كل منصة وده مهم جداً نتابعه بشكل دائم …',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 18,
+
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                    textDirection: ui.TextDirection.rtl,
+                                  ),
+                                ),
+
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 0),
+                                  child: Text(
+                                    'عن الـ Tips & Tricks ..',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primary,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      208, 8, 20, 0),
+                                  child: Text(
+                                    'جزء الـ Tips & Tricks هيبقى الجزء المفضل عن معظم الناس، لأن كلنا بنبقى محتاجين نعرف كل حاجة بين السطور واللي فعلاً لو اتقناها هنبقى في حتة تانية خالص. في الجزء ده، احنا هنتكلم عن اكتر الحاجات اللي عن تجربة اكتشفتها من تجارب كتير من خبرة سنين ليا ولغيري …',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 18,
+
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                    textDirection: ui.TextDirection.rtl,
+                                  ),
+                                ),
+
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 200, 0),
+                                  child: Text(
+                                    'عن الـ Case Studies ..',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primary,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8, 8, 220, 0),
+                                  child: Text(
+                                    'لو أنت من الناس اللي بتحب تقرأ وتشوف تجارب ناس حقيقية حصلت على أرض الواقع، يبقى الجزء ده هيكون المفضل ليك. هنا احنا هنتكلم عن علامات تجارية ومشاريع نجحت او فشلت، هنحكي قصصهم وهنطلع بدروس مستفادة وهنتناقش فيها …',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 18,
+
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                    textDirection: ui.TextDirection.rtl,
+                                  ),
+                                ),
+
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0, 0),
+                                  child: Text(
+                                    'يلا نرغي ..',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primary,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      208, 8, 20, 0),
+                                  child: Text(
+                                    'ولأن مش كل حاجة معلومات تعرفها، فأنت اكيد محتاج تسأل، محتاج تتناقش، محتاج ترغي ولو عندك مشكلة نحلها مع بغض. وده بالظبط اللي هنعمله هنا في "يلا نرغي" …',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 18,
+
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                          FlutterFlowTheme.of(context)
+                                              .titleMediumFamily),
+                                    ),
+                                    textDirection: ui.TextDirection.rtl,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                         if (responsiveVisibility(
                           context: context,
                           tablet: false,

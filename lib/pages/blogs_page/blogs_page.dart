@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterflow_ui_pro/flutterflow_ui_pro.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:marketika_website/components/blog_card/blog_card_widget.dart';
+import 'package:marketika_website/components/footer/footer_widget.dart';
 import 'package:marketika_website/components/top_nav/top_nav_widget.dart';
 import 'package:marketika_website/main.dart';
 

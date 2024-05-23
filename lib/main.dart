@@ -32,14 +32,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    f(kIsWeb) {
+    if(kIsWeb) {
       // Define MetaSEO object
       MetaSEO meta = MetaSEO();
       // add meta seo data for web app as you want
       meta.ogTitle(ogTitle: 'Marketika');
-      meta.ogDescription(ogDescription: 'Market');
-      meta.description(description: 'Market');
-      meta.keywords(keywords: 'Market, Marketing, ADs, Marketika, Marketika Site, Marketika Website, Marketika Web, Marketika Web Site, Marketing Blogs, Marketing Articles');
+      meta.ogDescription(ogDescription: 'الويب سايت ده هو المكان اللي هيساعدك تتعلم وتقرأ وتتسلى في كل ما يخص الماركتينج أو التسويق بالعربي وبأسلوب سهل وبسيط، وهيكون مرجع ليك في أي وقت لو فعلاً ناوي تدوس في مجال التسويق Marketing وخصوصاً مجال السوشيال ميديا Social Media. الويب سايت هيضم اقسام كتيرة منها: قسم للأدوات اللي هتساعدك في شغلك - قسم خاص بكل منصة Social Media Platform واللي هتعرف من خلالها كل حاجة عن المنصة دي - قسم هيديك كل التركات اللي تخلى بالك منها وتبقى ناجح في المجال ده Social Media Tips & Tricks - قسم هنعرض فيه قصص حقيقة والدروس المستفادة منها - ده غير اننا هنعمل ملفات تقدر تحملها Templates هتساعدك جداً في شغلك وتختصر وقت كبير. كل الأقسام دي ومش هننسى اننا محتاجين كمان ندردش سوا عشان لو حد حابب يشارك حاجة او يسأل واحنا هنجاوبه.');
+      meta.description(description: 'الويب سايت ده هو المكان اللي هيساعدك تتعلم وتقرأ وتتسلى في كل ما يخص الماركتينج أو التسويق بالعربي وبأسلوب سهل وبسيط، وهيكون مرجع ليك في أي وقت لو فعلاً ناوي تدوس في مجال التسويق Marketing وخصوصاً مجال السوشيال ميديا Social Media. الويب سايت هيضم اقسام كتيرة منها: قسم للأدوات اللي هتساعدك في شغلك - قسم خاص بكل منصة Social Media Platform واللي هتعرف من خلالها كل حاجة عن المنصة دي - قسم هيديك كل التركات اللي تخلى بالك منها وتبقى ناجح في المجال ده Social Media Tips & Tricks - قسم هنعرض فيه قصص حقيقة والدروس المستفادة منها - ده غير اننا هنعمل ملفات تقدر تحملها Templates هتساعدك جداً في شغلك وتختصر وقت كبير. كل الأقسام دي ومش هننسى اننا محتاجين كمان ندردش سوا عشان لو حد حابب يشارك حاجة او يسأل واحنا هنجاوبه.');
+      meta.keywords(keywords: 'كتابة إعلانات, كتابة محتوى, عبارات تسويقية ناجحة, ماركتينج بالمصري, ماركتينج بالعربي, التسويق, تعلم التسويق الرقمي, التشويق الرقمي, قصص في التسويق, ادوات التسويق, مقالات في التسويق, مقالات السوشيال ميديا, محتوى سوشيال ميديا, التسويق بالعربي, التسويق بالمصري, ماركتيكا, Social media, Social media content, Content creation, Social media specialist, Social media marketing, Social media in arabic, Marketing in arabic, Social media blog, Marketing blog, Social media tools, Social media tips & tricks, Social media updates, Marketika, Social media in egypt, Marketing in egypt, Digital marketing, Social media articles, Social media case studies, Social media ads, Social media seo, Google seo, Social media advertising, Free social media course, Free social media tools');
     }
 
     return AdaptiveTheme(
