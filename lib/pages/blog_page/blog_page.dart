@@ -456,9 +456,7 @@ class _BlogPageState extends State<BlogPage>
                                                         BorderRadius
                                                             .circular(12),
                                                         border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                              .of(context)
-                                                              .primary,
+                                                          color: Color(0xff9279ba),
                                                           width: 2,
                                                         ),
                                                       ),
@@ -627,7 +625,7 @@ class _BlogPageState extends State<BlogPage>
                                                                             '$stars stars',
                                                                             style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                               fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
-                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                              color: Color(0xff9279ba),
                                                                               letterSpacing: 0,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
                                                                             ),
@@ -732,8 +730,7 @@ class _BlogPageState extends State<BlogPage>
                                                                         .override(
                                                                       fontFamily:
                                                                       FlutterFlowTheme.of(context).titleLargeFamily,
-                                                                      color:
-                                                                      FlutterFlowTheme.of(context).primary,
+                                                                      color: Color(0xff9279ba),
                                                                       letterSpacing:
                                                                       0,
                                                                       useGoogleFonts:
@@ -946,7 +943,7 @@ class _BlogPageState extends State<BlogPage>
                                                     child: QuillEditor.basic(
                                                       configurations: QuillEditorConfigurations(
                                                         controller: _controller,
-                                                        readOnly: true,
+                                                        checkBoxReadOnly: true,
                                                         sharedConfigurations: const QuillSharedConfigurations(
                                                           locale: Locale('ar'),
                                                         ),
@@ -1127,8 +1124,7 @@ class _BlogPageState extends State<BlogPage>
                                                                 UnderlineInputBorder(
                                                                   borderSide:
                                                                   BorderSide(
-                                                                    color:
-                                                                    FlutterFlowTheme.of(context).primary,
+                                                                    color: Color(0xff9279ba),
                                                                     width:
                                                                     2,
                                                                   ),
@@ -1220,19 +1216,14 @@ class _BlogPageState extends State<BlogPage>
                                                             elevation: 0,
                                                             borderSide:
                                                             BorderSide(
-                                                              color: FlutterFlowTheme.of(
-                                                                  context)
-                                                                  .primary,
+                                                              color: Color(0xff9279ba),
                                                               width: 2,
                                                             ),
                                                             borderRadius:
                                                             BorderRadius
                                                                 .circular(
                                                                 50),
-                                                            hoverColor:
-                                                            FlutterFlowTheme.of(
-                                                                context)
-                                                                .primary,
+                                                            hoverColor: Color(0xff9279ba),
                                                             hoverTextColor:
                                                             FlutterFlowTheme.of(
                                                                 context)
@@ -1340,9 +1331,7 @@ class _BlogPageState extends State<BlogPage>
                                                         BorderRadius
                                                             .circular(8),
                                                         border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                              .of(context)
-                                                              .primary,
+                                                          color: Color(0xff9279ba),
                                                           width: 2,
                                                         ),
                                                       ),
@@ -1471,9 +1460,7 @@ class _BlogPageState extends State<BlogPage>
                                                         BorderRadius
                                                             .circular(8),
                                                         border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                              .of(context)
-                                                              .primary,
+                                                          color: Color(0xff9279ba),
                                                           width: 2,
                                                         ),
                                                       ),
@@ -1602,9 +1589,7 @@ class _BlogPageState extends State<BlogPage>
                                                         BorderRadius
                                                             .circular(8),
                                                         border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                              .of(context)
-                                                              .primary,
+                                                          color: Color(0xff9279ba),
                                                           width: 2,
                                                         ),
                                                       ),
@@ -1721,9 +1706,7 @@ class _BlogPageState extends State<BlogPage>
                                                 ),
                                                 child: isSubmitting? Center(child: CircularProgressIndicator(),):Icon(
                                                   Icons.star_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                      context)
-                                                      .primary,
+                                                  color: Color(0xff9279ba),
                                                   size: 32,
                                                 ),
                                               ),

@@ -54,7 +54,7 @@ class _NavTabWidgetState extends State<NavTabWidget> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
             border: Border.all(
-              color: isHover||widget.selected?FlutterFlowTheme.of(context).primary:Colors.grey,
+              color: isHover||widget.selected?Color(0xff9279ba):Colors.grey,
               width: widget.selected?2:1
             ),
             color: AdaptiveTheme.of(context).brightness == Brightness.light?Theme.of(context).hoverColor:Colors.white60

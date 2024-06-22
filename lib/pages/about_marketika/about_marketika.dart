@@ -50,7 +50,7 @@ class _AboutMarketikaState extends State<AboutMarketika> {
               wrapWithModel(
                 model: _model.topNavModel,
                 updateCallback: () => setState(() {}),
-                child: const TopNavWidget(index: 7,),
+                child: const TopNavWidget(index: 5,),
               ),
               Expanded(
                 child: Padding(
@@ -77,8 +77,7 @@ class _AboutMarketikaState extends State<AboutMarketika> {
                                     fontFamily:
                                     FlutterFlowTheme.of(context)
                                         .titleMediumFamily,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primary,
+                                    color: Color(0xff9279ba),
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                     useGoogleFonts: GoogleFonts.asMap()

@@ -534,44 +534,44 @@ class _TopNavWidgetState extends State<TopNavWidget>
                           selected: widget.index == 0,
                         ),
                         NavTabWidget(
-                          title: 'Tips & Tricks',
+                          title: 'يلا نرغي',
                           onTap: () async {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Tips & Tricks',type: 'tips',index: 1,),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'talk',index: 1,),));
                           },
                           selected: widget.index == 1,
                         ),
                         NavTabWidget(
-                          title: 'يلا نرغي',
+                          title: 'ادوات',
                           onTap: () async {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'talk',index: 2,),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'ادوات',type: 'tools',index: 2,),));
                           },
                           selected: widget.index == 2,
                         ),
                         NavTabWidget(
-                          title: 'ادوات',
+                          title: 'تجارب شخصية',
                           onTap: () async {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'ادوات',type: 'tools',index: 3,),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'تجارب شخصية',type: 'personal',index: 3,),));
                           },
                           selected: widget.index == 3,
                         ),
                         NavTabWidget(
-                          title: 'تجارب شخصية',
+                          title: 'منصات التواصل الاجتماعي',
                           onTap: () async {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'تجارب شخصية',type: 'personal',index: 4,),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'منصات التواصل الاجتماعي',type: 'social',index: 4,),));
                           },
                           selected: widget.index == 4,
                         ),
                         NavTabWidget(
-                          title: 'Case Studies',
+                          title: 'Tips & Tricks',
                           onTap: () async {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Case Studies',type: 'case',index: 5,),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Tips & Tricks',type: 'tips',index: 5,),));
                           },
                           selected: widget.index == 5,
                         ),
                         NavTabWidget(
-                          title: 'منصات التواصل الاجتماعي',
+                          title: 'Case Studies',
                           onTap: () async {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'منصات التواصل الاجتماعي',type: 'social',index: 2,),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Case Studies',type: 'case',index: 6,),));
                           },
                           selected: widget.index == 6,
                         ),
@@ -608,51 +608,51 @@ class _TopNavWidgetState extends State<TopNavWidget>
                             selected: widget.index == 0,
                           ),
                           NavTabWidget(
-                            title: 'Tips & Tricks',
+                            title: 'يلا نرغي',
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Tips & Tricks',type: 'tips',index: 1,),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'talk',index: 1,),));
                             },
                             selected: widget.index == 1,
                           ),
                           NavTabWidget(
-                            title: 'يلا نرغي',
+                            title: 'ادوات',
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'talk',index: 2,),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'ادوات',type: 'tools',index: 2,),));
                             },
                             selected: widget.index == 2,
                           ),
                           NavTabWidget(
-                            title: 'ادوات',
+                            title: 'تجارب شخصية',
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'ادوات',type: 'tools',index: 3,),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'تجارب شخصية',type: 'personal',index: 3,),));
                             },
                             selected: widget.index == 3,
                           ),
                           NavTabWidget(
-                            title: 'تجارب شخصية',
+                            title: 'منصات التواصل الاجتماعي',
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'تجارب شخصية',type: 'personal',index: 4,),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'منصات التواصل الاجتماعي',type: 'social',index: 4,),));
                             },
                             selected: widget.index == 4,
                           ),
                           NavTabWidget(
-                            title: 'Case Studies',
+                            title: 'Tips & Tricks',
                             onTap: () async {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Case Studies',type: 'case',index: 5,),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Tips & Tricks',type: 'tips',index: 5,),));
                             },
                             selected: widget.index == 5,
                           ),
                           NavTabWidget(
-                            title: 'منصات التواصل الاجتماعي',
+                            title: 'Case Studies',
                             onTap: () async {
-                              /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Case Studies',type: 'case',index: 6,),));
                             },
                             selected: widget.index == 6,
                           ),
                           NavTabWidget(
                             title: 'عن ماركتيكا',
                             onTap: () async {
-                              /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutMarketika(),));
                             },
                             selected: widget.index == 7,
                           ),
@@ -835,7 +835,7 @@ class _TopNavWidgetState extends State<TopNavWidget>
                   badgeStyle: badges.BadgeStyle(
                     shape: badges.BadgeShape.circle,
                     badgeColor: notifications.isNotEmpty
-                        ? FlutterFlowTheme.of(context).primary
+                        ? Color(0xff9279ba)
                         : FlutterFlowTheme.of(context).alternate,
                     elevation: 4,
                     padding: const EdgeInsets.all(8),
@@ -927,51 +927,51 @@ class _TopNavWidgetState extends State<TopNavWidget>
                     selected: widget.index == 0,
                   ),
                   NavTabWidget(
-                    title: 'Tips & Tricks',
+                    title: 'يلا نرغي',
                     onTap: () async {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Tips & Tricks',type: 'tips',index: 1,),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'talk',index: 1,),));
                     },
                     selected: widget.index == 1,
                   ),
                   NavTabWidget(
-                    title: 'يلا نرغي',
+                    title: 'ادوات',
                     onTap: () async {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'talk',index: 2,),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'ادوات',type: 'tools',index: 2,),));
                     },
                     selected: widget.index == 2,
                   ),
                   NavTabWidget(
-                    title: 'ادوات',
+                    title: 'تجارب شخصية',
                     onTap: () async {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'ادوات',type: 'tools',index: 3,),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'تجارب شخصية',type: 'personal',index: 3,),));
                     },
                     selected: widget.index == 3,
                   ),
                   NavTabWidget(
-                    title: 'تجارب شخصية',
+                    title: 'منصات التواصل الاجتماعي',
                     onTap: () async {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'تجارب شخصية',type: 'personal',index: 4,),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'منصات التواصل الاجتماعي',type: 'social',index: 4,),));
                     },
                     selected: widget.index == 4,
                   ),
                   NavTabWidget(
-                    title: 'Case Studies',
+                    title: 'Tips & Tricks',
                     onTap: () async {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Case Studies',type: 'case',index: 5,),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Tips & Tricks',type: 'tips',index: 5,),));
                     },
                     selected: widget.index == 5,
                   ),
                   NavTabWidget(
-                    title: 'منصات التواصل الاجتماعي',
+                    title: 'Case Studies',
                     onTap: () async {
-                      /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'Case Studies',type: 'case',index: 6,),));
                     },
                     selected: widget.index == 6,
                   ),
                   NavTabWidget(
                     title: 'عن ماركتيكا',
                     onTap: () async {
-                      /*Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogsPage(name: 'يلا نرغي',type: 'ra8y',index: 2,),));*/
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutMarketika(),));
                     },
                     selected: widget.index == 7,
                   ),

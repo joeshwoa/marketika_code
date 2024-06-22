@@ -112,7 +112,7 @@ class _GradientButtonWidgetState extends State<GradientButtonWidget>
                 ],
                 gradient: LinearGradient(
                   colors: [
-                    FlutterFlowTheme.of(context).primary,
+                    Color(0xff9279ba),
                     FlutterFlowTheme.of(context).tertiary
                   ],
                   stops: const [0, 1],

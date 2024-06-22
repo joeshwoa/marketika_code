@@ -145,7 +145,7 @@ class _DropdownNotificationsWidgetState
                       height: 50,
                       child: CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(
-                          FlutterFlowTheme.of(context).primary,
+                          Color(0xff9279ba),
                         ),
                       ),
                     ),
@@ -154,7 +154,7 @@ class _DropdownNotificationsWidgetState
                     bodyText: 'Seems you are all up to date!',
                     icon: Icon(
                             Icons.notifications_active_rounded,
-                            color: FlutterFlowTheme.of(context).primary,
+                            color: Color(0xff9279ba),
                             size: 90,
                           ),
                   ):ListView.builder(
@@ -209,7 +209,7 @@ class _DropdownNotificationsWidgetState
                                       borderRadius:
                                       BorderRadius.circular(8),
                                       border: Border.all(
-                                        color: FlutterFlowTheme.of(context).primary,
+                                        color: Color(0xff9279ba),
                                         width: 2,
                                       ),
                                     ),

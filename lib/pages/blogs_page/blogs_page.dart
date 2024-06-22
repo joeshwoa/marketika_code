@@ -47,7 +47,7 @@ class _BlogsPageState extends State<BlogsPage> {
   }
 
   void _scrollListener() {
-    if (_scrollController.position.extentAfter < 500 && !isLoading) {
+    if (_scrollController.position.extentAfter < 50 && !isLoading) {
       _fetchBlogCards();
     }
   }
@@ -57,7 +57,7 @@ class _BlogsPageState extends State<BlogsPage> {
       isLoading = true;
     });
 
-    final data = await supabase.from('blogs').select('id, imageUrl, title, description, created_at').eq('type', widget.type).range(_blogCards.length, _blogCards.length+9).order('created_at');
+    final data = await supabase.from('blogs').select('id, imageUrl, title, description, created_at').eq('type', widget.type).range(_blogCards.length, _blogCards.length + 9).order('created_at');
 
     setState(() {
       final blogCards = data
@@ -73,6 +73,27 @@ class _BlogsPageState extends State<BlogsPage> {
       _blogCards.addAll(blogCards);
       isLoading = false;
     });
+  }
+
+  // Helper methods to get crossAxisCount and childAspectRatio based on screen size
+  int getCrossAxisCount(BuildContext context) {
+    if (responsiveVisibility(context: context, phone: false, tablet: false, tabletLandscape: false)) {
+      return 3;
+    } else if (responsiveVisibility(context: context, phone: false, desktop: false)) {
+      return 2;
+    } else {
+      return 1;
+    }
+  }
+
+  double getChildAspectRatio(BuildContext context) {
+    if (responsiveVisibility(context: context, phone: false, tablet: false, tabletLandscape: false)) {
+      return 0.8;
+    } else if (responsiveVisibility(context: context, phone: false, desktop: false)) {
+      return 0.8;
+    } else {
+      return 1.1;
+    }
   }
 
   @override
@@ -92,7 +113,9 @@ class _BlogsPageState extends State<BlogsPage> {
               wrapWithModel(
                 model: _model.topNavModel,
                 updateCallback: () => setState(() {}),
-                child: TopNavWidget(index: widget.index,),
+                child: TopNavWidget(
+                  index: widget.index,
+                ),
               ),
               Align(
                 alignment: const AlignmentDirectional(-1, 0),
@@ -101,89 +124,52 @@ class _BlogsPageState extends State<BlogsPage> {
                   child: Text(
                     widget.name,
                     style: FlutterFlowTheme.of(context).titleLarge.override(
-                      fontFamily:
-                      FlutterFlowTheme.of(context).titleLargeFamily,
+                      fontFamily: FlutterFlowTheme.of(context).titleLargeFamily,
                       fontSize: 26,
-                      useGoogleFonts: GoogleFonts.asMap().containsKey(
-                          FlutterFlowTheme.of(context).titleLargeFamily),
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleLargeFamily),
                     ),
                   ),
                 ),
               ),
-              if (responsiveVisibility(
-                context: context,
-                phone: false,
-                tablet: false,
-                tabletLandscape: false,
-              ))
-                Expanded(
-                  child: !(isLoading && _blogCards.isEmpty)?
-                  GridView.builder(
-                    controller: _scrollController,
-                    padding: EdgeInsets.zero,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      childAspectRatio: 0.8,
+              Expanded(
+                child: !(isLoading && _blogCards.isEmpty)
+                    ? Container(
+                      decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/background.jpg'),
+                      fit: BoxFit.cover,
                     ),
-                    scrollDirection: Axis.vertical,
-                    itemBuilder: (context, index) => _blogCards[index],
-                    itemCount: _blogCards.length,
-                  ):
-                  const Center(
-                    child: CircularProgressIndicator(),
                   ),
+                      child: CustomScrollView(
+                                        controller: _scrollController,
+                                        slivers: [
+                                          if(_blogCards.isNotEmpty)SliverGrid(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: getCrossAxisCount(context),
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                          childAspectRatio: getChildAspectRatio(context),
+                        ),
+                        delegate: SliverChildBuilderDelegate(
+                              (context, index) {
+                            return _blogCards[index];
+                          },
+                          childCount: _blogCards.length,
+                        ),
+                      ),
+                      SliverToBoxAdapter(
+                        child: Padding(
+                          padding: EdgeInsets.only(top: _blogCards.isEmpty?MediaQuery.sizeOf(context).height*0.4:0),
+                          child: FooterWidget(),
+                        ),
+                      ),
+                                        ],
+                                      ),
+                    )
+                    : const Center(
+                  child: CircularProgressIndicator(),
                 ),
-              if (responsiveVisibility(
-                context: context,
-                phone: false,
-                desktop: false,
-              ))
-                Expanded(
-                  child: !(isLoading && _blogCards.isEmpty)?
-                  GridView.builder(
-                    controller: _scrollController,
-                    padding: EdgeInsets.zero,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      childAspectRatio: 0.8,
-                    ),
-                    scrollDirection: Axis.vertical,
-                    itemBuilder: (context, index) => _blogCards[index],
-                    itemCount: _blogCards.length,
-                  ):
-                  const Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                ),
-              if (responsiveVisibility(
-                context: context,
-                tablet: false,
-                tabletLandscape: false,
-                desktop: false,
-              ))
-                Expanded(
-                  child: !(isLoading && _blogCards.isEmpty)?
-                  GridView.builder(
-                    controller: _scrollController,
-                    padding: EdgeInsets.zero,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 1,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      childAspectRatio: 1.1,
-                    ),
-                    scrollDirection: Axis.vertical,
-                    itemBuilder: (context, index) => _blogCards[index],
-                    itemCount: _blogCards.length,
-                  ):
-                  const Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                ),
+              ),
             ],
           ),
         ),

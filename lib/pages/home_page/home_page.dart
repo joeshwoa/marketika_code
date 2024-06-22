@@ -246,140 +246,36 @@ class _HomePageState extends State<HomePage>
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(6),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        if (responsiveVisibility(
-                          context: context,
-                          tablet: false,
-                          tabletLandscape: false,
-                          desktop: false,
-                        ))
-                          Padding(
-                            padding:
-                            const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
-                            child: Form(
-                              key: searchFormKey,
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 50,
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context).primary,
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: const Color(0x00FFFFFF),
-                                      ),
-                                    ),
-                                    child: Icon(
-                                      Icons.search_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      size: 24,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8, 0, 8, 0),
-                                      child: TextFormField(
-                                        controller: _model.searchController,
-                                        focusNode: _model.searchFieldFocusNode,
-                                        autofocus: false,
-                                        textInputAction: TextInputAction.search,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          labelText: 'ابحث',
-                                          labelStyle: FlutterFlowTheme.of(context)
-                                              .labelMedium,
-                                          alignLabelWithHint: false,
-                                          hintStyle: FlutterFlowTheme.of(context)
-                                              .labelMedium,
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                              width: 2,
-                                            ),
-                                            borderRadius:
-                                            BorderRadius.circular(8),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .primary,
-                                              width: 2,
-                                            ),
-                                            borderRadius:
-                                            BorderRadius.circular(8),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
-                                              width: 2,
-                                            ),
-                                            borderRadius:
-                                            BorderRadius.circular(8),
-                                          ),
-                                          focusedErrorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
-                                              width: 2,
-                                            ),
-                                            borderRadius:
-                                            BorderRadius.circular(8),
-                                          ),
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
-                                        textAlign: TextAlign.end,
-                                        validator: _model.searchControllerValidator
-                                            .asValidator(context),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ).animateOnPageLoad(
-                                  animationsMap['rowOnPageLoadAnimation1']!),
-                            ),
-                          ),
-                        if (responsiveVisibility(
-                          context: context,
-                          phone: false,
-                        ))
-                          Padding(
-                            padding:
-                            const EdgeInsetsDirectional.fromSTEB(200, 0, 200, 0),
-                            child: Form(
-                              key: searchFormKey,
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  InkWell(
-                                    splashColor: Colors
-                                        .transparent,
-                                    focusColor: Colors
-                                        .transparent,
-                                    hoverColor: Colors
-                                        .transparent,
-                                    highlightColor:
-                                    Colors
-                                        .transparent,
-                                    onTap: () async {
-                                      if(_model.searchController!.text.isNotEmpty) {
-                                        await _searchBlogs();
-                                      }
-                                    },
-                                    child: Container(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/background.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          if (responsiveVisibility(
+                            context: context,
+                            tablet: false,
+                            tabletLandscape: false,
+                            desktop: false,
+                          ))
+                            Padding(
+                              padding:
+                              const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                              child: Form(
+                                key: searchFormKey,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
                                       width: 50,
                                       height: 50,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context).primary,
+                                        color: Color(0xff9279ba),
                                         borderRadius: BorderRadius.circular(8),
                                         border: Border.all(
                                           color: const Color(0x00FFFFFF),
@@ -392,1538 +288,1626 @@ class _HomePageState extends State<HomePage>
                                         size: 24,
                                       ),
                                     ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8, 0, 8, 0),
-                                      child: TextFormField(
-                                        controller: _model.searchController,
-                                        focusNode: _model.searchFieldFocusNode,
-                                        autofocus: false,
-                                        textInputAction: TextInputAction.search,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          labelText: 'ابحث',
-                                          labelStyle: FlutterFlowTheme.of(context)
-                                              .labelMedium,
-                                          alignLabelWithHint: false,
-                                          hintStyle: FlutterFlowTheme.of(context)
-                                              .labelMedium,
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                              width: 2,
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8, 0, 8, 0),
+                                        child: TextFormField(
+                                          controller: _model.searchController,
+                                          focusNode: _model.searchFieldFocusNode,
+                                          autofocus: false,
+                                          textInputAction: TextInputAction.search,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            labelText: 'ابحث',
+                                            labelStyle: FlutterFlowTheme.of(context)
+                                                .labelMedium,
+                                            alignLabelWithHint: false,
+                                            hintStyle: FlutterFlowTheme.of(context)
+                                                .labelMedium,
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                                width: 2,
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(8),
                                             ),
-                                            borderRadius:
-                                            BorderRadius.circular(8),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .primary,
-                                              width: 2,
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Color(0xff9279ba),
+                                                width: 2,
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(8),
                                             ),
-                                            borderRadius:
-                                            BorderRadius.circular(8),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
-                                              width: 2,
+                                            errorBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme.of(context)
+                                                    .error,
+                                                width: 2,
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(8),
                                             ),
-                                            borderRadius:
-                                            BorderRadius.circular(8),
-                                          ),
-                                          focusedErrorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: FlutterFlowTheme.of(context)
-                                                  .error,
-                                              width: 2,
+                                            focusedErrorBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme.of(context)
+                                                    .error,
+                                                width: 2,
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(8),
                                             ),
-                                            borderRadius:
-                                            BorderRadius.circular(8),
                                           ),
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
-                                        textAlign: TextAlign.end,
-                                        validator: _model.searchControllerValidator
-                                            .asValidator(context),
-                                        onFieldSubmitted: (value) async {
-                                          if(_model.searchController!.text.isNotEmpty) {
-                                            await _searchBlogs();
-                                          }
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ).animateOnPageLoad(
-                                  animationsMap['rowOnPageLoadAnimation2']!),
-                            ),
-                          ),
-                        if (responsiveVisibility(
-                          context: context,
-                          phone: false,
-                        ))
-                          Align(
-                            alignment: const AlignmentDirectional(0, -1),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: SizedBox(
-                                width: MediaQuery.sizeOf(context).width * 0.8,
-                                height: MediaQuery.sizeOf(context).height * 0.2,
-                                child: Stack(
-                                  children: [
-                                    Align(
-                                      alignment: const AlignmentDirectional(0, -1),
-                                      child: SizedBox(
-                                        width:
-                                        MediaQuery.sizeOf(context).width *
-                                            0.8,
-                                        height:
-                                        MediaQuery.sizeOf(context).height *
-                                            0.2,
-                                        child: !loadAdCards?
-                                        (_adCards.isNotEmpty?
-                                        CarouselSlider.builder(
-                                          itemBuilder: (context, index, realIndex) => _adCards[index],
-                                          itemCount: _adCards.length,
-                                          carouselController:
-                                          _model.carouselController ??=
-                                              CarouselController(),
-                                          options: CarouselOptions(
-                                            initialPage: 0,
-                                            viewportFraction: 0.5,
-                                            disableCenter: true,
-                                            enlargeCenterPage: true,
-                                            enlargeFactor: 0.25,
-                                            enableInfiniteScroll: true,
-                                            scrollDirection: Axis.horizontal,
-                                            autoPlay: true,
-                                            autoPlayAnimationDuration:
-                                            const Duration(milliseconds: 800),
-                                            autoPlayInterval: const Duration(
-                                                milliseconds: (800 + 4000)),
-                                            autoPlayCurve: Curves.linear,
-                                            pauseAutoPlayInFiniteScroll: true,
-                                            onPageChanged: (index, _) => _model
-                                                .carouselCurrentIndex = index,
-                                          ),
-                                        ):
-                                            const SizedBox()):
-                                        const Center(
-                                          child: CircularProgressIndicator(),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                          textAlign: TextAlign.end,
+                                          validator: _model.searchControllerValidator
+                                              .asValidator(context),
                                         ),
                                       ),
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                          width: 100,
-                                          height: double.infinity,
-                                          decoration: BoxDecoration(
-                                            gradient: LinearGradient(
-                                              colors: [
-                                                const Color(0x00FFFFFF),
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
-                                              ],
-                                              stops: const [0, 1],
-                                              begin: const AlignmentDirectional(1, 0),
-                                              end: const AlignmentDirectional(-1, 0),
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 100,
-                                          height: double.infinity,
-                                          decoration: BoxDecoration(
-                                            gradient: LinearGradient(
-                                              colors: [
-                                                const Color(0x00FFFFFF),
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
-                                              ],
-                                              stops: const [0, 1],
-                                              begin:
-                                              const AlignmentDirectional(-1, 0),
-                                              end: const AlignmentDirectional(1, 0),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
                                     ),
                                   ],
-                                ),
+                                ).animateOnPageLoad(
+                                    animationsMap['rowOnPageLoadAnimation1']!),
                               ),
                             ),
-                          ),
-                        if (responsiveVisibility(
-                          context: context,
-                          tablet: false,
-                          tabletLandscape: false,
-                          desktop: false,
-                        ))
-                          Align(
-                            alignment: const AlignmentDirectional(0, -1),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: SizedBox(
-                                width: MediaQuery.sizeOf(context).width * 0.95,
-                                height: MediaQuery.sizeOf(context).height * 0.1,
-                                child: Stack(
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                          ))
+                            Padding(
+                              padding:
+                              const EdgeInsetsDirectional.fromSTEB(200, 0, 200, 0),
+                              child: Form(
+                                key: searchFormKey,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Align(
-                                      alignment: const AlignmentDirectional(0, -1),
-                                      child: SizedBox(
-                                        width:
-                                        MediaQuery.sizeOf(context).width *
-                                            0.95,
-                                        height:
-                                        MediaQuery.sizeOf(context).height *
-                                            0.1,
-                                        child: !loadAdCards?
-                                            (_adCards.isNotEmpty?
-                                            CarouselSlider.builder(
-                                          itemBuilder: (context, index, realIndex) => _adCards[index],
-                                          itemCount: _adCards.length,
-                                          carouselController:
-                                          _model.carouselController ??=
-                                              CarouselController(),
-                                          options: CarouselOptions(
-                                            initialPage: 0,
-                                            viewportFraction: 0.5,
-                                            disableCenter: true,
-                                            enlargeCenterPage: true,
-                                            enlargeFactor: 0.25,
-                                            enableInfiniteScroll: true,
-                                            scrollDirection: Axis.horizontal,
-                                            autoPlay: true,
-                                            autoPlayAnimationDuration:
-                                            const Duration(milliseconds: 800),
-                                            autoPlayInterval: const Duration(
-                                                milliseconds: (800 + 4000)),
-                                            autoPlayCurve: Curves.linear,
-                                            pauseAutoPlayInFiniteScroll: true,
-                                            onPageChanged: (index, _) => _model
-                                                .carouselCurrentIndex = index,
+                                    InkWell(
+                                      splashColor: Colors
+                                          .transparent,
+                                      focusColor: Colors
+                                          .transparent,
+                                      hoverColor: Colors
+                                          .transparent,
+                                      highlightColor:
+                                      Colors
+                                          .transparent,
+                                      onTap: () async {
+                                        if(_model.searchController!.text.isNotEmpty) {
+                                          await _searchBlogs();
+                                        }
+                                      },
+                                      child: Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xff9279ba),
+                                          borderRadius: BorderRadius.circular(8),
+                                          border: Border.all(
+                                            color: const Color(0x00FFFFFF),
                                           ),
-                                        ):
-                                                const SizedBox()):
-                                        const Center(
-                                          child: CircularProgressIndicator(),
+                                        ),
+                                        child: Icon(
+                                          Icons.search_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          size: 24,
                                         ),
                                       ),
                                     ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                          width: 100,
-                                          height: double.infinity,
-                                          decoration: BoxDecoration(
-                                            gradient: LinearGradient(
-                                              colors: [
-                                                const Color(0x00FFFFFF),
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
-                                              ],
-                                              stops: const [0, 1],
-                                              begin: const AlignmentDirectional(1, 0),
-                                              end: const AlignmentDirectional(-1, 0),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8, 0, 8, 0),
+                                        child: TextFormField(
+                                          controller: _model.searchController,
+                                          focusNode: _model.searchFieldFocusNode,
+                                          autofocus: false,
+                                          textInputAction: TextInputAction.search,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            labelText: 'ابحث',
+                                            labelStyle: FlutterFlowTheme.of(context)
+                                                .labelMedium,
+                                            alignLabelWithHint: false,
+                                            hintStyle: FlutterFlowTheme.of(context)
+                                                .labelMedium,
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                                width: 2,
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(8),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Color(0xff9279ba),
+                                                width: 2,
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(8),
+                                            ),
+                                            errorBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme.of(context)
+                                                    .error,
+                                                width: 2,
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(8),
+                                            ),
+                                            focusedErrorBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme.of(context)
+                                                    .error,
+                                                width: 2,
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(8),
                                             ),
                                           ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                          textAlign: TextAlign.end,
+                                          validator: _model.searchControllerValidator
+                                              .asValidator(context),
+                                          onFieldSubmitted: (value) async {
+                                            if(_model.searchController!.text.isNotEmpty) {
+                                              await _searchBlogs();
+                                            }
+                                          },
                                         ),
-                                        Container(
-                                          width: 100,
-                                          height: double.infinity,
-                                          decoration: BoxDecoration(
-                                            gradient: LinearGradient(
-                                              colors: [
-                                                const Color(0x00FFFFFF),
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
-                                              ],
-                                              stops: const [0, 1],
-                                              begin:
-                                              const AlignmentDirectional(-1, 0),
-                                              end: const AlignmentDirectional(1, 0),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                      ),
                                     ),
                                   ],
+                                ).animateOnPageLoad(
+                                    animationsMap['rowOnPageLoadAnimation2']!),
+                              ),
+                            ),
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                          ))
+                            Align(
+                              alignment: const AlignmentDirectional(0, -1),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: SizedBox(
+                                  width: MediaQuery.sizeOf(context).width * 0.8,
+                                  height: MediaQuery.sizeOf(context).height * 0.2,
+                                  child: Stack(
+                                    children: [
+                                      Align(
+                                        alignment: const AlignmentDirectional(0, -1),
+                                        child: SizedBox(
+                                          width:
+                                          MediaQuery.sizeOf(context).width *
+                                              0.8,
+                                          height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.2,
+                                          child: !loadAdCards?
+                                          (_adCards.isNotEmpty?
+                                          CarouselSlider.builder(
+                                            itemBuilder: (context, index, realIndex) => _adCards[index],
+                                            itemCount: _adCards.length,
+                                            carouselController:
+                                            _model.carouselController ??=
+                                                CarouselController(),
+                                            options: CarouselOptions(
+                                              initialPage: 0,
+                                              viewportFraction: 0.5,
+                                              disableCenter: true,
+                                              enlargeCenterPage: true,
+                                              enlargeFactor: 0.25,
+                                              enableInfiniteScroll: true,
+                                              scrollDirection: Axis.horizontal,
+                                              autoPlay: true,
+                                              autoPlayAnimationDuration:
+                                              const Duration(milliseconds: 800),
+                                              autoPlayInterval: const Duration(
+                                                  milliseconds: (800 + 4000)),
+                                              autoPlayCurve: Curves.linear,
+                                              pauseAutoPlayInFiniteScroll: true,
+                                              onPageChanged: (index, _) => _model
+                                                  .carouselCurrentIndex = index,
+                                            ),
+                                          ):
+                                              const SizedBox()):
+                                          const Center(
+                                            child: CircularProgressIndicator(),
+                                          ),
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+                                            width: 100,
+                                            height: double.infinity,
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                colors: [
+                                                  const Color(0x00FFFFFF),
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground
+                                                ],
+                                                stops: const [0, 1],
+                                                begin: const AlignmentDirectional(1, 0),
+                                                end: const AlignmentDirectional(-1, 0),
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: 100,
+                                            height: double.infinity,
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                colors: [
+                                                  const Color(0x00FFFFFF),
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground
+                                                ],
+                                                stops: const [0, 1],
+                                                begin:
+                                                const AlignmentDirectional(-1, 0),
+                                                end: const AlignmentDirectional(1, 0),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        if (responsiveVisibility(
-                          context: context,
-                          phone: false,
-                        ))
-                          Align(
-                            alignment: const AlignmentDirectional(1, 0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  12, 16, 12, 16),
-                              child: Text(
-                                _searchBlogCards.isNotEmpty?'نتائج البحث':'احدث المقالات',
-                                textAlign: TextAlign.end,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .bodyMediumFamily,
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.bold,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(
-                                      FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily),
+                          if (responsiveVisibility(
+                            context: context,
+                            tablet: false,
+                            tabletLandscape: false,
+                            desktop: false,
+                          ))
+                            Align(
+                              alignment: const AlignmentDirectional(0, -1),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: SizedBox(
+                                  width: MediaQuery.sizeOf(context).width * 0.95,
+                                  height: MediaQuery.sizeOf(context).height * 0.1,
+                                  child: Stack(
+                                    children: [
+                                      Align(
+                                        alignment: const AlignmentDirectional(0, -1),
+                                        child: SizedBox(
+                                          width:
+                                          MediaQuery.sizeOf(context).width *
+                                              0.95,
+                                          height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.1,
+                                          child: !loadAdCards?
+                                              (_adCards.isNotEmpty?
+                                              CarouselSlider.builder(
+                                            itemBuilder: (context, index, realIndex) => _adCards[index],
+                                            itemCount: _adCards.length,
+                                            carouselController:
+                                            _model.carouselController ??=
+                                                CarouselController(),
+                                            options: CarouselOptions(
+                                              initialPage: 0,
+                                              viewportFraction: 0.5,
+                                              disableCenter: true,
+                                              enlargeCenterPage: true,
+                                              enlargeFactor: 0.25,
+                                              enableInfiniteScroll: true,
+                                              scrollDirection: Axis.horizontal,
+                                              autoPlay: true,
+                                              autoPlayAnimationDuration:
+                                              const Duration(milliseconds: 800),
+                                              autoPlayInterval: const Duration(
+                                                  milliseconds: (800 + 4000)),
+                                              autoPlayCurve: Curves.linear,
+                                              pauseAutoPlayInFiniteScroll: true,
+                                              onPageChanged: (index, _) => _model
+                                                  .carouselCurrentIndex = index,
+                                            ),
+                                          ):
+                                                  const SizedBox()):
+                                          const Center(
+                                            child: CircularProgressIndicator(),
+                                          ),
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+                                            width: 100,
+                                            height: double.infinity,
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                colors: [
+                                                  const Color(0x00FFFFFF),
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground
+                                                ],
+                                                stops: const [0, 1],
+                                                begin: const AlignmentDirectional(1, 0),
+                                                end: const AlignmentDirectional(-1, 0),
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: 100,
+                                            height: double.infinity,
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                colors: [
+                                                  const Color(0x00FFFFFF),
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground
+                                                ],
+                                                stops: const [0, 1],
+                                                begin:
+                                                const AlignmentDirectional(-1, 0),
+                                                end: const AlignmentDirectional(1, 0),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        if (responsiveVisibility(
-                          context: context,
-                          phone: false,
-                          tablet: false,
-                          tabletLandscape: false,
-                        ))
-                          Container(
-                            width: MediaQuery.sizeOf(context).width * 0.8,
-                            height: MediaQuery.sizeOf(context).height * 0.8,
-                            decoration: const BoxDecoration(),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                              child: _searchBlogCards.isNotEmpty? Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceEvenly,
-                                children: _searchBlogCards,
-                              ):
-                              !loadBlogCards? Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceEvenly,
-                                children: _blogCards,
-                              ):
-                              const Center(
-                                child: CircularProgressIndicator(),
-                              ),
-                            ),
-                          ),
-                        if (responsiveVisibility(
-                          context: context,
-                          phone: false,
-                          desktop: false,
-                        ))
-                          Container(
-                            width: MediaQuery.sizeOf(context).width * 0.98,
-                            height: MediaQuery.sizeOf(context).height * 0.5,
-                            decoration: const BoxDecoration(),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                              child: _searchBlogCards.isNotEmpty? Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceEvenly,
-                                children: _searchBlogCards,
-                              ):
-                              !loadBlogCards? Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceEvenly,
-                                children: _blogCards,
-                              ):
-                              const Center(
-                                child: CircularProgressIndicator(),
-                              ),
-                            ),
-                          ),
-                        if (responsiveVisibility(
-                          context: context,
-                          tablet: false,
-                          tabletLandscape: false,
-                          desktop: false,
-                        ))
-                          Container(
-                            width: MediaQuery.sizeOf(context).width * 0.98,
-                            decoration: const BoxDecoration(),
-                            child: Padding(
-                              padding:
-                              const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
-                              child: _searchBlogCards.isNotEmpty? Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: _searchBlogCards,
-                              ):
-                              !loadBlogCards? Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: _blogCards,
-                              ):
-                              const Center(
-                                child: CircularProgressIndicator(),
-                              ),
-                            ),
-                          ),
-                        Padding(
-                          padding: const EdgeInsets.all(20),
-                          child: SizedBox(
-                            width: double.infinity,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment:
-                              MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'عن رحلتي ..',
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                          ))
+                            Align(
+                              alignment: const AlignmentDirectional(1, 0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    12, 16, 12, 16),
+                                child: Text(
+                                  _searchBlogCards.isNotEmpty?'نتائج البحث':'احدث المقالات',
+                                  textAlign: TextAlign.end,
                                   style: FlutterFlowTheme.of(context)
-                                      .titleMedium
+                                      .bodyMedium
                                       .override(
-                                    fontFamily:
-                                    FlutterFlowTheme.of(context)
-                                        .titleMediumFamily,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primary,
-                                    fontSize: 22,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily,
+                                    fontSize: 28,
                                     fontWeight: FontWeight.bold,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                         FlutterFlowTheme.of(context)
-                                            .titleMediumFamily),
+                                            .bodyMediumFamily),
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      208, 8, 20, 20),
-                                  child: Text(
-                                    'بما انكوا فاتحين الجزء ده .. فأنتوا حابين تعرفوا عن رحلة الكفاح اللي حرفياً وبدون مبالغة كانت صعبة بكل ما تحتويه الكلمة من معنى بس في الآخر قدرت اثبتت انها مش مستحيلة كما يعتقد البعض. تعالوا نرجع لورا شوية – انا مارينا يونان عندي 29 سنة وانا قاصدة اقول سني اللي وصلت فيه دلوقتي اني اعمل الويب سايت …',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-
-                                      fontWeight: FontWeight.normal,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                    textDirection: ui.TextDirection.rtl,
-                                  ),
-                                ),
-
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 200, 0),
-                                  child: Text(
-                                    'عن ماركتيكا ..',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primary,
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8, 8, 220, 0),
-                                  child: Text(
-                                    'ماركتيكا هي المكان اللي هدفها مساعدة اصحاب الاعمال او الماركتيرز اللي بيشتغلوا في مجال التسويق الرقمي وبالأخص السوشيال ميديا. ماركتيكا بتقدم منصة كاملة تعليمية عشان تتعلم فيها كل حاجة من الألف إلى الياء، من أول انشاء صفحات على السوشيال ميديا بطريقة سليمة وإدارتها بشكل احترافي، وكتابة المحتوى، وعمل خطة كاملة للبيزنس، وبعض الأدوات والنصائح اللي هتخلي شغلك في حته تاني …',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-
-                                      fontWeight: FontWeight.normal,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                    textDirection: ui.TextDirection.rtl,
-                                  ),
-                                ),
-
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
-                                  child: Text(
-                                    'عن الأدوات ..',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primary,
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      208, 8, 20, 0),
-                                  child: Text(
-                                    'في القسم الأدوات، هنتكلم عن كل ادوات السوشيال ميديا المجانية والمدفوعة اللي هتخلى شغلنا احسن، واسهل، واسرع. وهنتعلم كمان ازاي نستخدمها، وازي نسجل فيها، ده غير ان هيكون في فيديوهات Tutorials هتساعدك ازاي تستفاد من مميزات كل اداه …',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-
-                                      fontWeight: FontWeight.normal,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                    textDirection: ui.TextDirection.rtl,
-                                  ),
-                                ),
-
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 200, 0),
-                                  child: Text(
-                                    'عن منصات التسويق ..',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primary,
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8, 8, 220, 0),
-                                  child: Text(
-                                    'الجزء ده من أهم الأجزاء اللي لازم نتاعبعها بشكل يومي، لأن هنا هتلاقي كل ما يخص منصات السوشيال ميديا وبالتفصيل الممل، وكمان كل التحديثات اللي بتحصل على كل منصة وده مهم جداً نتابعه بشكل دائم …',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-
-                                      fontWeight: FontWeight.normal,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                    textDirection: ui.TextDirection.rtl,
-                                  ),
-                                ),
-
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
-                                  child: Text(
-                                    'عن الـ Tips & Tricks ..',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primary,
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      208, 8, 20, 0),
-                                  child: Text(
-                                    'جزء الـ Tips & Tricks هيبقى الجزء المفضل عن معظم الناس، لأن كلنا بنبقى محتاجين نعرف كل حاجة بين السطور واللي فعلاً لو اتقناها هنبقى في حتة تانية خالص. في الجزء ده، احنا هنتكلم عن اكتر الحاجات اللي عن تجربة اكتشفتها من تجارب كتير من خبرة سنين ليا ولغيري …',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-
-                                      fontWeight: FontWeight.normal,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                    textDirection: ui.TextDirection.rtl,
-                                  ),
-                                ),
-
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 200, 0),
-                                  child: Text(
-                                    'عن الـ Case Studies ..',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primary,
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8, 8, 220, 0),
-                                  child: Text(
-                                    'لو أنت من الناس اللي بتحب تقرأ وتشوف تجارب ناس حقيقية حصلت على أرض الواقع، يبقى الجزء ده هيكون المفضل ليك. هنا احنا هنتكلم عن علامات تجارية ومشاريع نجحت او فشلت، هنحكي قصصهم وهنطلع بدروس مستفادة وهنتناقش فيها …',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-
-                                      fontWeight: FontWeight.normal,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                    textDirection: ui.TextDirection.rtl,
-                                  ),
-                                ),
-
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
-                                  child: Text(
-                                    'يلا نرغي ..',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primary,
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      208, 8, 20, 0),
-                                  child: Text(
-                                    'ولأن مش كل حاجة معلومات تعرفها، فأنت اكيد محتاج تسأل، محتاج تتناقش، محتاج ترغي ولو عندك مشكلة نحلها مع بغض. وده بالظبط اللي هنعمله هنا في "يلا نرغي" …',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                      fontFamily:
-                                      FlutterFlowTheme.of(context)
-                                          .titleMediumFamily,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 18,
-
-                                      fontWeight: FontWeight.normal,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily),
-                                    ),
-                                    textDirection: ui.TextDirection.rtl,
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
-                          ),
-                        ),
-                        if (responsiveVisibility(
-                          context: context,
-                          tablet: false,
-                          tabletLandscape: false,
-                          desktop: false,
-                        ))
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                            tablet: false,
+                            tabletLandscape: false,
+                          ))
+                            Container(
+                              width: MediaQuery.sizeOf(context).width * 0.8,
+                              height: MediaQuery.sizeOf(context).height * 0.8,
+                              decoration: const BoxDecoration(),
+                              child: Padding(
+                                padding:
+                                const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                                child: _searchBlogCards.isNotEmpty? Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                                  children: _searchBlogCards,
+                                ):
+                                !loadBlogCards? Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                                  children: _blogCards,
+                                ):
+                                const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              ),
+                            ),
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                            desktop: false,
+                          ))
+                            Container(
+                              width: MediaQuery.sizeOf(context).width * 0.98,
+                              height: MediaQuery.sizeOf(context).height * 0.5,
+                              decoration: const BoxDecoration(),
+                              child: Padding(
+                                padding:
+                                const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                                child: _searchBlogCards.isNotEmpty? Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                                  children: _searchBlogCards,
+                                ):
+                                !loadBlogCards? Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                                  children: _blogCards,
+                                ):
+                                const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              ),
+                            ),
+                          if (responsiveVisibility(
+                            context: context,
+                            tablet: false,
+                            tabletLandscape: false,
+                            desktop: false,
+                          ))
+                            Container(
+                              width: MediaQuery.sizeOf(context).width * 0.98,
+                              decoration: const BoxDecoration(),
+                              child: Padding(
+                                padding:
+                                const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                                child: _searchBlogCards.isNotEmpty? Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: _searchBlogCards,
+                                ):
+                                !loadBlogCards? Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: _blogCards,
+                                ):
+                                const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              ),
+                            ),
                           Padding(
                             padding: const EdgeInsets.all(20),
-                            child: Container(
+                            child: SizedBox(
                               width: double.infinity,
-                              height: MediaQuery.sizeOf(context).height * 0.30,
-                              decoration: BoxDecoration(
-                                color: const Color(0x676F61EF),
-                                borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(5),
-                                  topLeft: Radius.circular(5),
-                                  topRight: Radius.circular(20),
-                                ),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Form(
-                                  key: subscribeFormKey,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Text(
-                                        'تابع احدث المقالات',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                          fontFamily:
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    'عن رحلتي ..',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                      fontFamily:
+                                      FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
+                                      color: Color(0xff9279ba),
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
                                           FlutterFlowTheme.of(context)
-                                              .titleMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMediumFamily),
-                                        ),
+                                              .titleMediumFamily),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        208, 8, 20, 20),
+                                    child: Text(
+                                      'بما انكوا فاتحين الجزء ده .. فأنتوا حابين تعرفوا عن رحلة الكفاح اللي حرفياً وبدون مبالغة كانت صعبة بكل ما تحتويه الكلمة من معنى بس في الآخر قدرت اثبتت انها مش مستحيلة كما يعتقد البعض. تعالوا نرجع لورا شوية – انا مارينا يونان عندي 29 سنة وانا قاصدة اقول سني اللي وصلت فيه دلوقتي اني اعمل الويب سايت …',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 18,
+
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8, 4, 8, 4),
-                                        child: TextFormField(
-                                          controller: _model.nameController,
-                                          focusNode: _model.nameFieldFocusNode,
-                                          autofocus: false,
-                                          autofillHints: const [AutofillHints.name],
-                                          textInputAction: TextInputAction.next,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelText: 'الاسم',
-                                            labelStyle:
+                                      textDirection: ui.TextDirection.rtl,
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0, 0, 200, 0),
+                                    child: Text(
+                                      'عن ماركتيكا ..',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: Color(0xff9279ba),
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
                                             FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            hintStyle:
+                                                .titleMediumFamily),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        8, 8, 220, 0),
+                                    child: Text(
+                                      'ماركتيكا هي المكان اللي هدفها مساعدة اصحاب الاعمال او الماركتيرز اللي بيشتغلوا في مجال التسويق الرقمي وبالأخص السوشيال ميديا. ماركتيكا بتقدم منصة كاملة تعليمية عشان تتعلم فيها كل حاجة من الألف إلى الياء، من أول انشاء صفحات على السوشيال ميديا بطريقة سليمة وإدارتها بشكل احترافي، وكتابة المحتوى، وعمل خطة كاملة للبيزنس، وبعض الأدوات والنصائح اللي هتخلي شغلك في حته تاني …',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 18,
+
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
                                             FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            focusedErrorBorder:
-                                            OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            filled: true,
-                                            fillColor:
+                                                .titleMediumFamily),
+                                      ),
+                                      textDirection: ui.TextDirection.rtl,
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0, 0, 0, 0),
+                                    child: Text(
+                                      'عن الأدوات ..',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: Color(0xff9279ba),
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
                                             FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
+                                                .titleMediumFamily),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        208, 8, 20, 0),
+                                    child: Text(
+                                      'في القسم الأدوات، هنتكلم عن كل ادوات السوشيال ميديا المجانية والمدفوعة اللي هتخلى شغلنا احسن، واسهل، واسرع. وهنتعلم كمان ازاي نستخدمها، وازي نسجل فيها، ده غير ان هيكون في فيديوهات Tutorials هتساعدك ازاي تستفاد من مميزات كل اداه …',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 18,
+
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                      ),
+                                      textDirection: ui.TextDirection.rtl,
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0, 0, 200, 0),
+                                    child: Text(
+                                      'عن منصات التسويق ..',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: Color(0xff9279ba),
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        8, 8, 220, 0),
+                                    child: Text(
+                                      'الجزء ده من أهم الأجزاء اللي لازم نتاعبعها بشكل يومي، لأن هنا هتلاقي كل ما يخص منصات السوشيال ميديا وبالتفصيل الممل، وكمان كل التحديثات اللي بتحصل على كل منصة وده مهم جداً نتابعه بشكل دائم …',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 18,
+
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                      ),
+                                      textDirection: ui.TextDirection.rtl,
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0, 0, 0, 0),
+                                    child: Text(
+                                      'عن الـ Tips & Tricks ..',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: Color(0xff9279ba),
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        208, 8, 20, 0),
+                                    child: Text(
+                                      'جزء الـ Tips & Tricks هيبقى الجزء المفضل عن معظم الناس، لأن كلنا بنبقى محتاجين نعرف كل حاجة بين السطور واللي فعلاً لو اتقناها هنبقى في حتة تانية خالص. في الجزء ده، احنا هنتكلم عن اكتر الحاجات اللي عن تجربة اكتشفتها من تجارب كتير من خبرة سنين ليا ولغيري …',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 18,
+
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                      ),
+                                      textDirection: ui.TextDirection.rtl,
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0, 0, 200, 0),
+                                    child: Text(
+                                      'عن الـ Case Studies ..',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: Color(0xff9279ba),
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        8, 8, 220, 0),
+                                    child: Text(
+                                      'لو أنت من الناس اللي بتحب تقرأ وتشوف تجارب ناس حقيقية حصلت على أرض الواقع، يبقى الجزء ده هيكون المفضل ليك. هنا احنا هنتكلم عن علامات تجارية ومشاريع نجحت او فشلت، هنحكي قصصهم وهنطلع بدروس مستفادة وهنتناقش فيها …',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 18,
+
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                      ),
+                                      textDirection: ui.TextDirection.rtl,
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0, 0, 0, 0),
+                                    child: Text(
+                                      'يلا نرغي ..',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: Color(0xff9279ba),
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        208, 8, 20, 0),
+                                    child: Text(
+                                      'ولأن مش كل حاجة معلومات تعرفها، فأنت اكيد محتاج تسأل، محتاج تتناقش، محتاج ترغي ولو عندك مشكلة نحلها مع بغض. وده بالظبط اللي هنعمله هنا في "يلا نرغي" …',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                        fontFamily:
+                                        FlutterFlowTheme.of(context)
+                                            .titleMediumFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 18,
+
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleMediumFamily),
+                                      ),
+                                      textDirection: ui.TextDirection.rtl,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          if (responsiveVisibility(
+                            context: context,
+                            tablet: false,
+                            tabletLandscape: false,
+                            desktop: false,
+                          ))
+                            Padding(
+                              padding: const EdgeInsets.all(20),
+                              child: Container(
+                                width: double.infinity,
+                                height: MediaQuery.sizeOf(context).height * 0.30,
+                                decoration: BoxDecoration(
+                                  color: const Color(0x676F61EF),
+                                  borderRadius: const BorderRadius.only(
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(5),
+                                    topLeft: Radius.circular(5),
+                                    topRight: Radius.circular(20),
+                                  ),
+                                  border: Border.all(
+                                    color: Color(0xff9279ba),
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Form(
+                                    key: subscribeFormKey,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text(
+                                          'تابع احدث المقالات',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                          textAlign: TextAlign.end,
-                                          keyboardType: TextInputType.name,
-                                          validator: _model
-                                              .nameControllerValidator
-                                              .asValidator(context),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8, 4, 8, 4),
-                                        child: TextFormField(
-                                          controller: _model.emailController,
-                                          focusNode: _model.emailFieldFocusNode,
-                                          autofocus: false,
-                                          autofillHints: const [AutofillHints.email],
-                                          textInputAction: TextInputAction.done,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelText: 'البريد الالكتروني',
-                                            labelStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            hintStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            focusedErrorBorder:
-                                            OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            filled: true,
-                                            fillColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                          textAlign: TextAlign.end,
-                                          keyboardType:
-                                          TextInputType.emailAddress,
-                                          validator: _model
-                                              .emailControllerValidator
-                                              .asValidator(context),
-                                        ),
-                                      ),
-                                      FFButtonWidget(
-                                        onPressed: subscribe,
-                                        text: 'تابع الان',
-                                        options: FFButtonOptions(
-                                          height: 40,
-                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                              24, 0, 24, 0),
-                                          iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 0, 0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          textStyle: FlutterFlowTheme.of(context)
-                                              .titleSmall
+                                              .titleMedium
                                               .override(
                                             fontFamily:
                                             FlutterFlowTheme.of(context)
-                                                .titleSmallFamily,
-                                            color: Colors.white,
-                                            useGoogleFonts: GoogleFonts
-                                                .asMap()
+                                                .titleMediumFamily,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
-                                                FlutterFlowTheme.of(
-                                                    context)
-                                                    .titleSmallFamily),
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily),
                                           ),
-                                          elevation: 3,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1,
-                                          ),
-                                          borderRadius: BorderRadius.circular(8),
                                         ),
-                                      ),
-                                    ],
+                                        Padding(
+                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                              8, 4, 8, 4),
+                                          child: TextFormField(
+                                            controller: _model.nameController,
+                                            focusNode: _model.nameFieldFocusNode,
+                                            autofocus: false,
+                                            autofillHints: const [AutofillHints.name],
+                                            textInputAction: TextInputAction.next,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText: 'الاسم',
+                                              labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xff9279ba),
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              focusedErrorBorder:
+                                              OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
+                                            textAlign: TextAlign.end,
+                                            keyboardType: TextInputType.name,
+                                            validator: _model
+                                                .nameControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                              8, 4, 8, 4),
+                                          child: TextFormField(
+                                            controller: _model.emailController,
+                                            focusNode: _model.emailFieldFocusNode,
+                                            autofocus: false,
+                                            autofillHints: const [AutofillHints.email],
+                                            textInputAction: TextInputAction.done,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText: 'البريد الالكتروني',
+                                              labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xff9279ba),
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              focusedErrorBorder:
+                                              OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
+                                            textAlign: TextAlign.end,
+                                            keyboardType:
+                                            TextInputType.emailAddress,
+                                            validator: _model
+                                                .emailControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: subscribe,
+                                          text: 'تابع الان',
+                                          options: FFButtonOptions(
+                                            height: 40,
+                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                24, 0, 24, 0),
+                                            iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0, 0, 0, 0),
+                                            color: Color(0xff9279ba),
+                                            textStyle: FlutterFlowTheme.of(context)
+                                                .titleSmall
+                                                .override(
+                                              fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                              color: Colors.white,
+                                              useGoogleFonts: GoogleFonts
+                                                  .asMap()
+                                                  .containsKey(
+                                                  FlutterFlowTheme.of(
+                                                      context)
+                                                      .titleSmallFamily),
+                                            ),
+                                            elevation: 3,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1,
+                                            ),
+                                            borderRadius: BorderRadius.circular(8),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        if (responsiveVisibility(
-                          context: context,
-                          phone: false,
-                          desktop: false,
-                        ))
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Container(
-                              width: MediaQuery.sizeOf(context).width * 0.5,
-                              height: MediaQuery.sizeOf(context).height * 0.18,
-                              decoration: BoxDecoration(
-                                color: const Color(0x676F61EF),
-                                borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(5),
-                                  topLeft: Radius.circular(5),
-                                  topRight: Radius.circular(20),
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                            desktop: false,
+                          ))
+                            Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 0.5,
+                                height: MediaQuery.sizeOf(context).height * 0.18,
+                                decoration: BoxDecoration(
+                                  color: const Color(0x676F61EF),
+                                  borderRadius: const BorderRadius.only(
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(5),
+                                    topLeft: Radius.circular(5),
+                                    topRight: Radius.circular(20),
+                                  ),
+                                  border: Border.all(
+                                    color: Color(0xff9279ba),
+                                  ),
                                 ),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Form(
-                                  key: subscribeFormKey,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Text(
-                                        'تابع احدث المقالات',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                          fontFamily:
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMediumFamily),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8, 4, 8, 4),
-                                        child: TextFormField(
-                                          controller: _model.nameController,
-                                          focusNode: _model.nameFieldFocusNode,
-                                          autofocus: false,
-                                          autofillHints: const [AutofillHints.name],
-                                          textInputAction: TextInputAction.next,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelText: 'الاسم',
-                                            labelStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            hintStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            focusedErrorBorder:
-                                            OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            filled: true,
-                                            fillColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Form(
+                                    key: subscribeFormKey,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text(
+                                          'تابع احدث المقالات',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                          textAlign: TextAlign.end,
-                                          keyboardType: TextInputType.name,
-                                          validator: _model
-                                              .nameControllerValidator
-                                              .asValidator(context),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8, 4, 8, 4),
-                                        child: TextFormField(
-                                          controller: _model.emailController,
-                                          focusNode: _model.emailFieldFocusNode,
-                                          autofocus: false,
-                                          autofillHints: const [AutofillHints.email],
-                                          textInputAction: TextInputAction.done,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelText: 'البريد الالكتروني',
-                                            labelStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            hintStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            focusedErrorBorder:
-                                            OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            filled: true,
-                                            fillColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                          textAlign: TextAlign.end,
-                                          keyboardType:
-                                          TextInputType.emailAddress,
-                                          validator: _model
-                                              .emailControllerValidator
-                                              .asValidator(context),
-                                        ),
-                                      ),
-                                      FFButtonWidget(
-                                        onPressed: subscribe,
-                                        text: 'تابع الان',
-                                        options: FFButtonOptions(
-                                          height: 40,
-                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                              24, 0, 24, 0),
-                                          iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 0, 0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          textStyle: FlutterFlowTheme.of(context)
-                                              .titleSmall
+                                              .titleMedium
                                               .override(
                                             fontFamily:
                                             FlutterFlowTheme.of(context)
-                                                .titleSmallFamily,
-                                            color: Colors.white,
-                                            useGoogleFonts: GoogleFonts
-                                                .asMap()
+                                                .titleMediumFamily,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
-                                                FlutterFlowTheme.of(
-                                                    context)
-                                                    .titleSmallFamily),
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily),
                                           ),
-                                          elevation: 3,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1,
-                                          ),
-                                          borderRadius: BorderRadius.circular(8),
                                         ),
-                                      ),
-                                    ],
+                                        Padding(
+                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                              8, 4, 8, 4),
+                                          child: TextFormField(
+                                            controller: _model.nameController,
+                                            focusNode: _model.nameFieldFocusNode,
+                                            autofocus: false,
+                                            autofillHints: const [AutofillHints.name],
+                                            textInputAction: TextInputAction.next,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText: 'الاسم',
+                                              labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xff9279ba),
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              focusedErrorBorder:
+                                              OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
+                                            textAlign: TextAlign.end,
+                                            keyboardType: TextInputType.name,
+                                            validator: _model
+                                                .nameControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                              8, 4, 8, 4),
+                                          child: TextFormField(
+                                            controller: _model.emailController,
+                                            focusNode: _model.emailFieldFocusNode,
+                                            autofocus: false,
+                                            autofillHints: const [AutofillHints.email],
+                                            textInputAction: TextInputAction.done,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText: 'البريد الالكتروني',
+                                              labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xff9279ba),
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              focusedErrorBorder:
+                                              OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
+                                            textAlign: TextAlign.end,
+                                            keyboardType:
+                                            TextInputType.emailAddress,
+                                            validator: _model
+                                                .emailControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: subscribe,
+                                          text: 'تابع الان',
+                                          options: FFButtonOptions(
+                                            height: 40,
+                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                24, 0, 24, 0),
+                                            iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0, 0, 0, 0),
+                                            color: Color(0xff9279ba),
+                                            textStyle: FlutterFlowTheme.of(context)
+                                                .titleSmall
+                                                .override(
+                                              fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                              color: Colors.white,
+                                              useGoogleFonts: GoogleFonts
+                                                  .asMap()
+                                                  .containsKey(
+                                                  FlutterFlowTheme.of(
+                                                      context)
+                                                      .titleSmallFamily),
+                                            ),
+                                            elevation: 3,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1,
+                                            ),
+                                            borderRadius: BorderRadius.circular(8),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        if (responsiveVisibility(
-                          context: context,
-                          phone: false,
-                          tablet: false,
-                          tabletLandscape: false,
-                        ))
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Container(
-                              width: MediaQuery.sizeOf(context).width * 0.4,
-                              height: MediaQuery.sizeOf(context).height * 0.4,
-                              decoration: BoxDecoration(
-                                color: const Color(0x676F61EF),
-                                borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(5),
-                                  topLeft: Radius.circular(5),
-                                  topRight: Radius.circular(20),
+                          if (responsiveVisibility(
+                            context: context,
+                            phone: false,
+                            tablet: false,
+                            tabletLandscape: false,
+                          ))
+                            Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 0.4,
+                                height: MediaQuery.sizeOf(context).height * 0.4,
+                                decoration: BoxDecoration(
+                                  color: const Color(0x676F61EF),
+                                  borderRadius: const BorderRadius.only(
+                                    bottomLeft: Radius.circular(20),
+                                    bottomRight: Radius.circular(5),
+                                    topLeft: Radius.circular(5),
+                                    topRight: Radius.circular(20),
+                                  ),
+                                  border: Border.all(
+                                    color: Color(0xff9279ba),
+                                  ),
                                 ),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Form(
-                                  key: subscribeFormKey,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Text(
-                                        'تابع احدث المقالات',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleMedium
-                                            .override(
-                                          fontFamily:
-                                          FlutterFlowTheme.of(context)
-                                              .titleMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMediumFamily),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8, 4, 8, 4),
-                                        child: TextFormField(
-                                          controller: _model.nameController,
-                                          focusNode: _model.nameFieldFocusNode,
-                                          autofocus: false,
-                                          autofillHints: const [AutofillHints.name],
-                                          textInputAction: TextInputAction.next,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelText: 'الاسم',
-                                            labelStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            hintStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            focusedErrorBorder:
-                                            OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(0),
-                                                bottomRight: Radius.circular(0),
-                                                topLeft: Radius.circular(5),
-                                                topRight: Radius.circular(20),
-                                              ),
-                                            ),
-                                            filled: true,
-                                            fillColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Form(
+                                    key: subscribeFormKey,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text(
+                                          'تابع احدث المقالات',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                          textAlign: TextAlign.end,
-                                          keyboardType: TextInputType.name,
-                                          validator: _model
-                                              .nameControllerValidator
-                                              .asValidator(context),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            8, 4, 8, 4),
-                                        child: TextFormField(
-                                          controller: _model.emailController,
-                                          focusNode: _model.emailFieldFocusNode,
-                                          autofocus: false,
-                                          autofillHints: const [AutofillHints.email],
-                                          textInputAction: TextInputAction.done,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelText: 'البريد الالكتروني',
-                                            labelStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            hintStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            focusedErrorBorder:
-                                            OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                                width: 2,
-                                              ),
-                                              borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(20),
-                                                bottomRight: Radius.circular(5),
-                                                topLeft: Radius.circular(0),
-                                                topRight: Radius.circular(0),
-                                              ),
-                                            ),
-                                            filled: true,
-                                            fillColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                          textAlign: TextAlign.end,
-                                          keyboardType:
-                                          TextInputType.emailAddress,
-                                          validator: _model
-                                              .emailControllerValidator
-                                              .asValidator(context),
-                                        ),
-                                      ),
-                                      FFButtonWidget(
-                                        onPressed: subscribe,
-                                        text: 'تابع الان',
-                                        options: FFButtonOptions(
-                                          height: 40,
-                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                              24, 0, 24, 0),
-                                          iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 0, 0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          textStyle: FlutterFlowTheme.of(context)
-                                              .titleSmall
+                                              .titleMedium
                                               .override(
                                             fontFamily:
                                             FlutterFlowTheme.of(context)
-                                                .titleSmallFamily,
-                                            color: Colors.white,
-                                            useGoogleFonts: GoogleFonts
-                                                .asMap()
+                                                .titleMediumFamily,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
-                                                FlutterFlowTheme.of(
-                                                    context)
-                                                    .titleSmallFamily),
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMediumFamily),
                                           ),
-                                          elevation: 3,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1,
-                                          ),
-                                          borderRadius: BorderRadius.circular(8),
                                         ),
-                                      ),
-                                    ],
+                                        Padding(
+                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                              8, 4, 8, 4),
+                                          child: TextFormField(
+                                            controller: _model.nameController,
+                                            focusNode: _model.nameFieldFocusNode,
+                                            autofocus: false,
+                                            autofillHints: const [AutofillHints.name],
+                                            textInputAction: TextInputAction.next,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText: 'الاسم',
+                                              labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xff9279ba),
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              focusedErrorBorder:
+                                              OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(0),
+                                                  bottomRight: Radius.circular(0),
+                                                  topLeft: Radius.circular(5),
+                                                  topRight: Radius.circular(20),
+                                                ),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
+                                            textAlign: TextAlign.end,
+                                            keyboardType: TextInputType.name,
+                                            validator: _model
+                                                .nameControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                              8, 4, 8, 4),
+                                          child: TextFormField(
+                                            controller: _model.emailController,
+                                            focusNode: _model.emailFieldFocusNode,
+                                            autofocus: false,
+                                            autofillHints: const [AutofillHints.email],
+                                            textInputAction: TextInputAction.done,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText: 'البريد الالكتروني',
+                                              labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xff9279ba),
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              focusedErrorBorder:
+                                              OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                                  width: 2,
+                                                ),
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(20),
+                                                  bottomRight: Radius.circular(5),
+                                                  topLeft: Radius.circular(0),
+                                                  topRight: Radius.circular(0),
+                                                ),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
+                                            textAlign: TextAlign.end,
+                                            keyboardType:
+                                            TextInputType.emailAddress,
+                                            validator: _model
+                                                .emailControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                        FFButtonWidget(
+                                          onPressed: subscribe,
+                                          text: 'تابع الان',
+                                          options: FFButtonOptions(
+                                            height: 40,
+                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                24, 0, 24, 0),
+                                            iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0, 0, 0, 0),
+                                            color: Color(0xff9279ba),
+                                            textStyle: FlutterFlowTheme.of(context)
+                                                .titleSmall
+                                                .override(
+                                              fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                              color: Colors.white,
+                                              useGoogleFonts: GoogleFonts
+                                                  .asMap()
+                                                  .containsKey(
+                                                  FlutterFlowTheme.of(
+                                                      context)
+                                                      .titleSmallFamily),
+                                            ),
+                                            elevation: 3,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1,
+                                            ),
+                                            borderRadius: BorderRadius.circular(8),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        const FooterWidget()
-                      ],
+                          const FooterWidget()
+                        ],
+                      ),
                     ),
                   ),
                 ),
